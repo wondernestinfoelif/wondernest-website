@@ -3,226 +3,151 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WONDERNEST — Her Yaşta Öğrenme, Eşitlik ve %100 Güncel Bilgi</title>
-<meta name="description" content="WONDERNEST: Her yaş için, eğitimde eşitlik ilkesine dayanan; %100 güncel ve kaynaklı içeriklerle öğrenme alanı.">
-<link rel="alternate" href="index.html" hreflang="tr">
-<link rel="alternate" href="en/index.html" hreflang="en">
+<title>WONDERNEST — Her Yaşta Öğrenme ve %100 Güncel Bilgi</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-  /* 🎨 Pinterest esini: adaçayı yeşili / şeftali turuncusu / nude-teni */
-  :root{
-    --bg1:#FAF5EF; --bg2:#F7EFE7;          /* yumuşak arka plan */
-    --sage:#6E9E8B; --sage-deep:#3F6E5C;   /* adaçayı */
-    --peach:#F6A66A; --peach-deep:#E9893D; /* şeftali/turuncu */
-    --nude:#F2E8DE; --tan:#E8CFB4;
-    --ink:#2E3F3A; --white:#FFFFFF;
-    --radius:16px;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{
-    font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-    color:var(--ink); line-height:1.6; min-height:100vh; padding:24px;
-    background:
-      radial-gradient(1000px 700px at 80% 0%, rgba(246,166,106,0.10), transparent 60%),
-      radial-gradient(800px 520px at 10% 25%, rgba(110,158,139,0.12), transparent 60%),
-      linear-gradient(180deg,var(--bg1) 0%, var(--bg2) 100%);
-    overflow-x:hidden;
-  }
-  .container{max-width:1150px;margin:0 auto; position:relative}
+:root{
+  --bg1:#f9f5ef;--bg2:#f4eee8;
+  --sage:#6E9E8B;--peach:#F6A66A;--ink:#2E3F3A;
+  --white:#fff;--radius:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Poppins',sans-serif;color:var(--ink);line-height:1.6;
+  background:linear-gradient(160deg,var(--bg1) 0%,var(--bg2) 100%);
+  overflow-x:hidden;padding:24px;min-height:100vh;
+}
+.container{max-width:1100px;margin:0 auto;position:relative}
 
-  /* Üst şerit */
-  header{
-    display:flex;align-items:center;justify-content:space-between;gap:16px;
-    background: rgba(255,255,255,0.75); backdrop-filter: blur(8px);
-    border:1px solid rgba(46,63,58,0.06); border-radius:var(--radius);
-    padding:12px 16px; box-shadow:0 6px 18px rgba(46,63,58,0.06);
-    position:relative; z-index:2;
-  }
-  .brand{display:flex;align-items:center;gap:12px}
-  .logo img{height:54px;border-radius:12px;display:block}
-  .name{font-weight:700;letter-spacing:.5px}
-  nav a{
-    color:var(--ink); text-decoration:none; font-weight:600; margin-left:14px;
-    padding:6px 10px; border-radius:12px; border:1px solid transparent; transition:.25s;
-  }
-  nav a:hover{ border-color: rgba(46,63,58,0.12); transform: translateY(-1px) }
-  .cta{
-    background:linear-gradient(180deg,var(--peach),var(--peach-deep));
-    color:#2f2f2f; border-radius:24px; padding:10px 16px;
-    box-shadow:0 6px 14px rgba(246,166,106,0.25); text-decoration:none; font-weight:700; transition:transform .2s cubic-bezier(.2,.8,.2,1);
-  }
-  .cta:hover{ transform: translateY(-2px) scale(1.02) }
-  .lang{
-    margin-left:12px; padding:6px 10px; border-radius:999px;
-    background:rgba(110,158,139,0.15); text-decoration:none; color:var(--ink);
-    border:1px solid rgba(46,63,58,0.10); font-size:13px; transition:.25s;
-  }
-  .lang:hover{ background:rgba(110,158,139,0.25) }
+/* HEADER ------------------------------------------------*/
+header{
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(255,255,255,0.8);backdrop-filter:blur(8px);
+  border-radius:var(--radius);padding:14px 18px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.05);
+}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:52px;border-radius:12px}
+nav a{
+  text-decoration:none;color:var(--ink);font-weight:600;margin-left:16px;
+  transition:.25s;border-bottom:2px solid transparent;
+}
+nav a:hover{border-bottom-color:var(--peach)}
+.cta{
+  background:var(--peach);padding:8px 16px;border-radius:999px;
+  font-weight:700;text-decoration:none;color:#2f2f2f;
+  box-shadow:0 4px 10px rgba(246,166,106,0.3);transition:.25s;
+}
+.cta:hover{transform:translateY(-2px) scale(1.05)}
+/* HERO ---------------------------------------------------*/
+.hero{
+  margin-top:40px;display:grid;grid-template-columns:1fr 1fr;
+  align-items:center;gap:28px;position:relative;z-index:1;
+}
+.hero-card{
+  background:var(--white);border-radius:var(--radius);
+  padding:28px;box-shadow:0 12px 26px rgba(0,0,0,0.08);
+  border:1px solid rgba(0,0,0,0.05);transition:.4s;
+}
+.hero-card:hover{transform:translateY(-6px) rotateX(1deg);box-shadow:0 16px 36px rgba(0,0,0,0.1)}
+h1{font-size:34px;color:var(--sage);margin-bottom:10px}
+.lede{font-weight:600;color:var(--ink)}
+.muted{color:#666}
 
-  /* Hero */
-  .hero{ margin-top:28px; display:grid; grid-template-columns:1.15fr .85fr; gap:24px; align-items:center; position:relative; z-index:1 }
-  .hero-card{
-    background:var(--white); border:1px solid rgba(46,63,58,0.06); border-radius:var(--radius);
-    padding:26px; box-shadow:0 10px 24px rgba(46,63,58,0.08);
-    transform-style:preserve-3d; transition: transform .25s ease;
-  }
-  .hero-card:hover{ transform: perspective(900px) rotateX(2deg) rotateY(-2deg) translateZ(2px) }
-  h1{font-size:32px;line-height:1.15;color:var(--sage-deep);margin-bottom:10px}
-  .lede{font-weight:600; color:var(--ink)}
-  .muted{color:#5b6a66}
+/* ANIMATED BACKGROUND -----------------------------------*/
+.scene{
+  height:260px;border-radius:var(--radius);
+  background:
+    url('https://cdn.jsdelivr.net/gh/visualsources/wondernest-assets/leaves.svg') 8% 18% / 130px no-repeat,
+    url('https://cdn.jsdelivr.net/gh/visualsources/wondernest-assets/flask.svg') 90% 75% / 110px no-repeat,
+    url('https://cdn.jsdelivr.net/gh/visualsources/wondernest-assets/book.svg') 12% 78% / 120px no-repeat,
+    linear-gradient(180deg,rgba(255,255,255,0.5),rgba(255,255,255,0.2));
+  border:1px solid rgba(0,0,0,0.05);box-shadow:inset 0 0 30px rgba(255,255,255,0.6);
+  overflow:hidden;position:relative;
+}
+@keyframes floaty{0%{background-position:8% 18%,90% 75%,12% 78%}
+50%{background-position:6% 20%,88% 73%,14% 76%}
+100%{background-position:10% 16%,92% 77%,10% 80%}}
+.scene{animation:floaty 35s ease-in-out infinite alternate}
+.sparkle{position:absolute;inset:0;pointer-events:none}
+.sparkle span{position:absolute;width:8px;height:8px;border-radius:50%;
+background:rgba(246,166,106,0.5);animation:sparkle 4s ease-in-out infinite}
+.sparkle span:nth-child(odd){background:rgba(110,158,139,0.4)}
+@keyframes sparkle{0%,100%{transform:translateY(0);opacity:.7}
+50%{transform:translateY(-4px);opacity:1}}
+.sparkle span:nth-child(1){top:20%;left:25%}
+.sparkle span:nth-child(2){top:40%;left:65%}
+.sparkle span:nth-child(3){top:70%;left:10%}
+.sparkle span:nth-child(4){top:85%;left:85%}
+.sparkle span:nth-child(5){top:10%;left:75%}
 
-  /* İllüstratif arka plan: yaprak + büyüteç + kitap + lab şişesi */
-  .scene{
-    min-height:280px; border-radius:var(--radius); position:relative;
-    background:
-      url('https://cdn.jsdelivr.net/gh/visualsources/wondernest-assets/leaves.svg') 6% 14% / 140px no-repeat,
-      url('https://cdn.jsdelivr.net/gh/visualsources/wondernest-assets/magnifier.svg') 84% 18% / 120px no-repeat,
-      url('https://cdn.jsdelivr.net/gh/visualsources/wondernest-assets/book.svg') 12% 78% / 120px no-repeat,
-      url('https://cdn.jsdelivr.net/gh/visualsources/wondernest-assets/flask.svg') 90% 76% / 100px no-repeat,
-      linear-gradient(180deg, rgba(242,232,222,0.55), rgba(242,232,222,0.35));
-    border:1px dashed rgba(46,63,58,0.08);
-    overflow:hidden;
-  }
-  .float{ position:absolute; inset:0; animation:floaty 40s infinite alternate ease-in-out; }
-  @keyframes floaty{
-    0%{ transform: translate3d(0,0,0) }
-    50%{ transform: translate3d(-6px,4px,0) }
-    100%{ transform: translate3d(6px,-4px,0) }
-  }
+/* GRID ---------------------------------------------------*/
+.section-title{margin-top:40px;font-size:24px;color:var(--sage);text-align:center}
+.grid{margin-top:24px;display:grid;gap:22px;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+}
+.card{
+  background:var(--white);border-radius:var(--radius);
+  padding:20px;box-shadow:0 10px 24px rgba(0,0,0,0.07);
+  border:1px solid rgba(0,0,0,0.05);transition:.3s;
+  background-image:linear-gradient(145deg,rgba(246,166,106,0.05),rgba(110,158,139,0.05));
+}
+.card:hover{transform:translateY(-6px);box-shadow:0 14px 32px rgba(0,0,0,0.1)}
+.card h3{color:var(--sage);margin-bottom:8px;font-size:18px}
+.tag{display:inline-block;background:var(--bg2);color:#4d4d4d;border-radius:999px;
+padding:4px 10px;font-size:12px;margin-top:6px;margin-right:6px}
 
-  /* Parıltı tozları */
-  @keyframes sparkle { 0%,100%{transform:translateY(0) scale(1);opacity:.6} 50%{transform:translateY(-4px) scale(1.05);opacity:1} }
-  .sparkle{ position:absolute; inset:0; pointer-events:none }
-  .sparkle span{ position:absolute; width:6px;height:6px;border-radius:50%;
-    background:rgba(246,166,106,.45); animation:sparkle 4s ease-in-out infinite }
-  .sparkle span:nth-child(odd){ background:rgba(110,158,139,.45) }
-  .sparkle span:nth-child(1){ top:18%; left:24%; animation-delay:0s}
-  .sparkle span:nth-child(2){ top:42%; left:60%; animation-delay:1s}
-  .sparkle span:nth-child(3){ top:72%; left:14%; animation-delay:2s}
-  .sparkle span:nth-child(4){ top:80%; left:86%; animation-delay:3s}
-  .sparkle span:nth-child(5){ top:10%; left:74%; animation-delay:1.5s}
-
-  /* Kategoriler */
-  .section-title{margin-top:32px; font-size:22px; color:var(--sage-deep); display:flex; align-items:center; gap:10px}
-  .pill{background:var(--nude); color:#4d4d4d; border-radius:999px; padding:6px 12px; font-size:12px; font-weight:700}
-  .grid{ margin-top:18px; display:grid; gap:18px; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)) }
-  .card{
-    background:var(--white); border:1px solid rgba(46,63,58,0.06); border-radius:var(--radius);
-    padding:18px; box-shadow:0 8px 18px rgba(46,63,58,0.06); transition:transform .25s ease, box-shadow .25s ease;
-  }
-  .card:hover{ transform: translateY(-4px); box-shadow:0 12px 26px rgba(46,63,58,0.10) }
-  .card h3{ color:var(--sage-deep); margin-bottom:6px }
-  .meta{ display:flex; gap:10px; flex-wrap:wrap; margin-top:8px }
-  .tag{ display:inline-block; background:var(--nude); color:#4d4d4d; border-radius:999px; padding:4px 10px; font-size:12px }
-
-  /* Alt Bilgi */
-  footer{ margin-top:34px; color:#6b756f; font-size:14px; text-align:center; border-top:1px solid rgba(46,63,58,0.08); padding-top:16px }
-
-  /* Hareketi sevmeyenler için */
-  @media (prefers-reduced-motion: reduce){
-    .float, .sparkle span{ animation:none !important }
-    .hero-card:hover{ transform:none }
-    .cta:hover{ transform:none }
-  }
-
-  /* Mobil */
-  @media (max-width:900px){
-    .hero{grid-template-columns:1fr}
-    nav{display:none}
-  }
+footer{
+  margin-top:40px;text-align:center;color:#6b756f;font-size:14px;
+  border-top:1px solid rgba(0,0,0,0.08);padding-top:16px;
+}
+@media(max-width:900px){.hero{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="brand">
-        <!-- Logon: assets/logo.png yüklediysen görünür; yoksa yazı kalır -->
-        <div class="logo">
-          <img src="assets/logo.png" alt="WONDERNEST logosu" onerror="this.style.display='none'">
-        </div>
-        <div class="name">WONDERNEST</div>
-      </div>
-      <nav>
-        <a href="#categories">Kategoriler</a>
-        <a href="#about">Hakkımızda</a>
-        <a href="#join" class="cta">Bültene Katıl</a>
-        <a class="lang" href="en/index.html" aria-label="Switch to English">EN</a>
-      </nav>
-    </header>
-
-    <section class="hero">
-      <div class="hero-card">
-        <h1>Her yaşta öğrenme için; eşit, sıcak ve %100 güncel.</h1>
-        <p class="lede">WONDERNEST, <strong>eğitimde eşitlik</strong> ilkesine dayanır. Tüm içeriklerimiz <strong>%100 güncel</strong> ve <strong>kaynaklı</strong>dır; herkesin anlayacağı bir dilde sunulur.</p>
-        <p class="muted">Çocuk, genç, yetişkin… Merak eden herkes için sade anlatım, sağlam bilim ve nazik bir öğrenme ortamı.</p>
-        <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap">
-          <a class="cta" href="#categories">Kategorileri Keşfet</a>
-          <!-- Bülten linkini yarın ekleyeceğiz -->
-          <a class="cta" id="join" href="#" onclick="alert('Bülten linkini yarın ekleyeceğiz 💌');return false;" style="background:linear-gradient(180deg,var(--nude),#e9d7c6)">Bültene Katıl</a>
-        </div>
-      </div>
-      <div class="scene">
-        <div class="float"></div>
-        <div class="sparkle">
-          <span></span><span></span><span></span><span></span><span></span>
-        </div>
-      </div>
-    </section>
-
-    <h2 id="categories" class="section-title">Kategoriler <span class="pill">Her yaş için</span></h2>
-    <section class="grid">
-      <article class="card">
-        <h3>Mikrobiyoloji & Makrobiyoloji</h3>
-        <p>Hücrelerden ekosistemlere—yaşamın görünmeyen ve görünen katmanları.</p>
-        <div class="meta"><span class="tag">DNA</span><span class="tag">Ekosistem</span></div>
-      </article>
-      <article class="card">
-        <h3>Nöroloji & Psikoloji</h3>
-        <p>Beyin, bellek, duygu ve davranışın bilimsel temelleri.</p>
-        <div class="meta"><span class="tag">Bellek</span><span class="tag">Duygu</span></div>
-      </article>
-      <article class="card">
-        <h3>Anatomi & İnsan Sağlığı</h3>
-        <p>Vücut sistemleri, koruyucu sağlık ve yaşam boyu iyi oluş.</p>
-        <div class="meta"><span class="tag">Fizyoloji</span><span class="tag">Sağlık</span></div>
-      </article>
-      <article class="card">
-        <h3>Edebiyat & Kültür</h3>
-        <p>Bilim dili, anlatı, kültür ve eleştirel düşünmenin buluştuğu alan.</p>
-        <div class="meta"><span class="tag">Anlatı</span><span class="tag">Kültür</span></div>
-      </article>
-      <article class="card">
-        <h3>Çevre Bilimi</h3>
-        <p>Gezegen sağlığı, sürdürülebilirlik ve iklim okuryazarlığı.</p>
-        <div class="meta"><span class="tag">İklim</span><span class="tag">Sürdürülebilirlik</span></div>
-      </article>
-      <article class="card">
-        <h3>Fizik & Kimya</h3>
-        <p>Doğanın temel yasaları ve maddenin hikâyesi.</p>
-        <div class="meta"><span class="tag">Enerji</span><span class="tag">Madde</span></div>
-      </article>
-      <article class="card">
-        <h3>Elif Yıldız Projesi</h3>
-        <p>Toplumsal öğrenme ve erişilebilirlik: saha gözlemleri, atölyeler, mikro burs ve eşitlik odaklı içerikler.</p>
-        <div class="meta"><span class="tag">Eşitlik</span><span class="tag">Topluluk</span></div>
-      </article>
-      <article class="card">
-        <h3>Hurafe Avcısı: Türk Halkı Ne Biliyor?</h3>
-        <p>Yanlış kanıları nazikçe çürütüyoruz. Bilim ne diyor? Kaynaklı kısa açıklamalar ve “doğru-yanlış” kartları.</p>
-        <div class="meta"><span class="tag">Mit Çürütme</span><span class="tag">%100 Güncel</span></div>
-      </article>
-    </section>
-
-    <section id="about" class="hero-card" style="margin-top:28px">
-      <h2 style="color:var(--sage-deep); margin-bottom:8px;">Hakkımızda</h2>
-      <p class="muted">WONDERNEST, <strong>her yaşta öğrenmeyi</strong> herkes için mümkün kılmayı hedefler. Eşit erişim, açık dil, kaynaklı anlatım ve güncel bilim—hepsi aynı yuva içinde.</p>
-    </section>
-
-    <footer>© <span id="year"></span> WONDERNEST — Eşitlik, merak ve güvenilir bilgi. 🌙</footer>
+<div class="container">
+<header>
+  <div class="brand">
+    <img src="assets/logo.png" alt="WONDERNEST" onerror="this.style.display='none'">
+    <div class="name"><b>WONDERNEST</b></div>
   </div>
+  <nav>
+    <a href="#categories">Kategoriler</a>
+    <a href="#about">Hakkımızda</a>
+    <a class="cta" href="#join">Bültene Katıl</a>
+    <a href="hurafe/index.html">Hurafe Avcısı</a>
+  </nav>
+</header>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+<section class="hero">
+  <div class="hero-card">
+    <h1>Her yaşta öğrenmek için; eşit, sıcak ve %100 güncel.</h1>
+    <p class="lede">WONDERNEST, eğitimde eşitlik ilkesine dayanır. Tüm içerikler %100 güncel, kaynaklı ve sade bir dille sunulur.</p>
+    <p class="muted">Bilim, kültür, sağlık, çevre... Merak eden herkes için nazik bir öğrenme alanı.</p>
+  </div>
+  <div class="scene">
+    <div class="sparkle"><span></span><span></span><span></span><span></span><span></span></div>
+  </div>
+</section>
+
+<h2 id="categories" class="section-title">Kategoriler</h2>
+<section class="grid">
+  <div class="card"><h3>Mikrobiyoloji & Makrobiyoloji</h3><p>Hücrelerden ekosistemlere: yaşamın katmanları.</p><span class="tag">DNA</span><span class="tag">Ekosistem</span></div>
+  <div class="card"><h3>Nöroloji & Psikoloji</h3><p>Beyin, bellek ve davranışın bilimsel temelleri.</p><span class="tag">Bellek</span><span class="tag">Duygu</span></div>
+  <div class="card"><h3>Anatomi & İnsan Sağlığı</h3><p>Vücut sistemleri ve koruyucu sağlık.</p><span class="tag">Fizyoloji</span><span class="tag">Sağlık</span></div>
+  <div class="card"><h3>Edebiyat & Kültür</h3><p>Bilim dili, anlatı ve eleştirel düşünme.</p><span class="tag">Anlatı</span><span class="tag">Kültür</span></div>
+  <div class="card"><h3>Çevre Bilimi</h3><p>Gezegen sağlığı ve sürdürülebilirlik.</p><span class="tag">İklim</span><span class="tag">Doğa</span></div>
+  <div class="card"><h3>Fizik & Kimya</h3><p>Doğanın temel yasaları ve maddenin hikayesi.</p><span class="tag">Enerji</span><span class="tag">Madde</span></div>
+  <div class="card"><h3>Hurafe Avcısı</h3><p>Türk halkının doğru bildiği yanlışlar: bilimin cevabı.</p><span class="tag">Mit Çürütme</span><span class="tag">%100 Güncel</span></div>
+</section>
+
+<section id="about" class="hero-card" style="margin-top:32px">
+  <h2 style="color:var(--sage);margin-bottom:8px;">Hakkımızda</h2>
+  <p class="muted">WONDERNEST, herkesin merakını besleyen, eşit erişimli bir öğrenme yuvasıdır. Bilimi sadeleştirir, kültürü öğretir, düşünmeyi güzelleştirir.</p>
+</section>
+
+<footer>© <span id="year"></span> WONDERNEST — Eşitlik, merak ve bilim. 🌿</footer>
+</div>
+<script>document.getElementById("year").textContent=new Date().getFullYear()</script>
 </body>
 </html>
