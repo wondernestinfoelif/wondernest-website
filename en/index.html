@@ -4,117 +4,154 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WONDERNEST — Learn with Ease</title>
-  <meta name="description" content="WONDERNEST: A calm, accessible space for curious minds.">
+  <meta name="description" content="WONDERNEST: A calm, accessible learning space that gently nurtures curiosity.">
+  <link rel="alternate" href="../index.html" hreflang="tr">
+  <link rel="alternate" href="index.html" hreflang="en">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --navy: #0A1C2B;
-      --orange: #F59B42;
-      --nude: #F2E8DE;
-      --text: #2E2E2E;
-      --white: #FFFFFF;
-      --radius: 16px;
+    :root{
+      --bg1:#FAF5EF; --bg2:#F7EFE7;
+      --sage:#6E9E8B; --sage-deep:#487C69;
+      --peach:#F6A66A; --nude:#F2E8DE; --tan:#E8CFB4;
+      --ink:#2E3F3A; --white:#FFFFFF; --radius:16px;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(180deg, var(--navy) 0%, #122a41 60%);
-      color: var(--white);
-      line-height: 1.6;
-      padding: 24px;
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--ink); line-height:1.6;
+      background:
+        radial-gradient(1200px 800px at 80% 0%, rgba(246,166,106,0.08), transparent 60%),
+        radial-gradient(900px 600px at 10% 20%, rgba(110,158,139,0.10), transparent 60%),
+        linear-gradient(180deg,var(--bg1) 0%, var(--bg2) 100%);
+      padding:24px; min-height:100vh;
     }
-    .container { max-width: 1100px; margin: 0 auto; }
-    header {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.08);
+    .container{max-width:1100px;margin:0 auto}
+    header{
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(6px);
+      border:1px solid rgba(46,63,58,0.06);
+      border-radius:var(--radius);
+      padding:12px 16px;
+      box-shadow:0 6px 18px rgba(46,63,58,0.06);
     }
-    .logo {
-      background: var(--orange);
-      color: var(--navy);
-      font-weight: 700;
-      padding: 10px 16px; border-radius: var(--radius);
-      font-size: 22px; letter-spacing: 1px;
-      box-shadow: 0 4px 14px rgba(245,155,66,0.3);
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo img{height:56px;border-radius:12px;display:block}
+    .name{font-weight:700;letter-spacing:.5px}
+    nav a{
+      color:var(--ink); text-decoration:none; font-weight:600; margin-left:14px;
+      padding:6px 10px; border-radius:12px; border:1px solid transparent;
     }
-    nav a {
-      color: var(--nude); margin-left: 16px; text-decoration: none; font-weight: 500;
+    nav a:hover{ border-color: rgba(46,63,58,0.12) }
+    .cta{
+      background:var(--peach); color:#2f2f2f; border-radius:24px; padding:10px 16px;
+      box-shadow:0 6px 14px rgba(246,166,106,0.25); text-decoration:none; font-weight:700
     }
-    nav a:hover { color: var(--orange); }
-    .lang {
-      margin-left: 16px; padding: 6px 12px; border-radius: 20px;
-      background: rgba(255,255,255,0.08); text-decoration: none; color: var(--white);
-      font-size: 13px; border: 1px solid rgba(255,255,255,0.1);
+    .lang{
+      margin-left:12px; padding:6px 10px; border-radius:999px;
+      background:rgba(110,158,139,0.15); text-decoration:none; color:var(--ink);
+      border:1px solid rgba(46,63,58,0.10); font-size:13px;
     }
-    .lang:hover { background: rgba(255,255,255,0.16); }
-    .hero { margin-top: 60px; text-align: center; }
-    .hero h1 { font-size: 34px; font-weight: 700; color: var(--nude); }
-    .hero p { max-width: 700px; margin: 20px auto; color: rgba(255,255,255,0.85); font-weight: 300; }
-    .cta {
-      background: var(--orange); color: var(--navy); padding: 12px 24px; border-radius: 30px;
-      text-decoration: none; font-weight: 600; display: inline-block; margin-top: 6px;
+    .lang:hover{ background:rgba(110,158,139,0.25) }
+
+    .hero{ margin-top:28px; display:grid; grid-template-columns:1.1fr .9fr; gap:24px; align-items:center; }
+    .hero-card{
+      background:var(--white);
+      border:1px solid rgba(46,63,58,0.06);
+      border-radius:var(--radius);
+      padding:24px;
+      box-shadow:0 10px 24px rgba(46,63,58,0.08);
     }
-    .cta:hover { background: #ffb469; }
-    .sections {
-      margin-top: 60px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px;
+    h1{font-size:32px;line-height:1.15;color:var(--sage-deep);margin-bottom:10px}
+    .muted{color:#5b6a66}
+
+    body::before {
+      content: "";
+      position: fixed; inset: 0;
+      background:
+        url('https://cdn.jsdelivr.net/gh/visualsources/wondernest-assets/leaves.svg') 5% 10% / 140px no-repeat,
+        url('https://cdn.jsdelivr.net/gh/visualsources/wondernest-assets/magnifier.svg') 85% 20% / 120px no-repeat,
+        url('https://cdn.jsdelivr.net/gh/visualsources/wondernest-assets/book.svg') 15% 80% / 120px no-repeat,
+        url('https://cdn.jsdelivr.net/gh/visualsources/wondernest-assets/flask.svg') 90% 75% / 100px no-repeat,
+        radial-gradient(circle at 30% 10%, rgba(246,166,106,0.15), transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(110,158,139,0.15), transparent 50%);
+      opacity: .8; z-index: -1; animation: floaty 40s infinite alternate ease-in-out;
     }
-    .card {
-      background: var(--white); color: var(--text); padding: 24px; border-radius: var(--radius);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08); transition: transform 0.3s;
+    @keyframes floaty{
+      0%{background-position:5% 10%,85% 20%,15% 80%,90% 75%}
+      50%{background-position:4% 12%,83% 22%,14% 78%,88% 73%}
+      100%{background-position:6% 8%,87% 18%,16% 82%,92% 77%}
     }
-    .card:hover { transform: translateY(-6px); }
-    .card h3 { color: var(--navy); margin-bottom: 8px; }
-    footer {
-      margin-top: 60px; text-align: center; color: var(--nude); font-size: 14px;
-      border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px;
-    }
-    @media (max-width: 600px) { .hero h1 { font-size: 26px; } }
+
+    @keyframes sparkle{0%,100%{transform:translateY(0) scale(1);opacity:.7}50%{transform:translateY(-4px) scale(1.05);opacity:1}}
+    .sparkle{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;overflow:hidden;z-index:-1}
+    .sparkle span{position:absolute;width:6px;height:6px;background:rgba(246,166,106,.4);border-radius:50%;animation:sparkle 4s ease-in-out infinite}
+    .sparkle span:nth-child(odd){background:rgba(110,158,139,.4)}
+    .sparkle span:nth-child(1){top:20%;left:25%;animation-delay:0s}
+    .sparkle span:nth-child(2){top:40%;left:60%;animation-delay:1s}
+    .sparkle span:nth-child(3){top:70%;left:15%;animation-delay:2s}
+    .sparkle span:nth-child(4){top:80%;left:85%;animation-delay:3s}
+    .sparkle span:nth-child(5){top:10%;left:75%;animation-delay:1.5s}
+
+    .grid{margin-top:28px;display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+    .card{background:var(--white);border:1px solid rgba(46,63,58,.06);border-radius:var(--radius);padding:18px;box-shadow:0 8px 18px rgba(46,63,58,.06);transition:transform .25s}
+    .card:hover{transform:translateY(-4px)}
+    .card h3{color:var(--sage-deep);margin-bottom:6px}
+    .tag{display:inline-block;background:var(--nude);color:#4d4d4d;border-radius:999px;padding:4px 10px;font-size:12px;margin-top:6px}
+
+    footer{margin-top:32px;color:#6b756f;font-size:14px;text-align:center;border-top:1px solid rgba(46,63,58,.08);padding-top:16px}
+
+    @media (max-width:900px){.hero{grid-template-columns:1fr}nav{display:none}}
   </style>
-  <!-- hreflang for SEO -->
-  <link rel="alternate" href="../index.html" hreflang="tr" />
-  <link rel="alternate" href="./index.html" hreflang="en" />
 </head>
 <body>
   <div class="container">
     <header>
-      <div class="logo">WONDERNEST</div>
+      <div class="brand">
+        <div class="logo">
+          <img src="../assets/logo.png" alt="WONDERNEST logo" onerror="this.outerHTML='<div class=\'name\'>WONDERNEST</div>'">
+        </div>
+        <div class="name">WONDERNEST</div>
+      </div>
       <nav>
         <a href="#departments">Departments</a>
-        <a href="#blog">Blog</a>
         <a href="#about">About</a>
         <a href="#join" class="cta">Join Newsletter</a>
-        <a class="lang" href="../index.html" aria-label="Türkçe'ye geç">TR</a>
+        <a class="lang" href="../index.html" aria-label="Türkçe\'ye geç">TR</a>
       </nav>
     </header>
 
     <section class="hero">
-      <h1>Be curious, learn gently. 🌿</h1>
-      <p>WONDERNEST is a calm, accessible learning space for everyone. Explore biology, psychology, neurology and more — with warmth and clarity.</p>
-      <a href="#join" class="cta">Join Newsletter</a>
+      <div class="hero-card">
+        <h1>Be curious, learn gently. 🌿</h1>
+        <p class="muted">WONDERNEST is a calm learning space that simplifies science, grounds it in reliable sources, and makes it accessible to everyone.</p>
+        <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap">
+          <!-- Add your form link when ready -->
+          <a class="cta" id="join" href="#" onclick="alert('We will add the newsletter link tomorrow 💌');return false;">Join Newsletter</a>
+          <a href="#departments" style="text-decoration:none;border:1px solid rgba(46,63,58,0.12);padding:10px 16px;border-radius:14px;color:var(--ink);font-weight:600">See Departments</a>
+        </div>
+      </div>
+      <div class="illustration" aria-hidden="true"></div>
     </section>
 
-    <section class="sections" id="departments">
-      <div class="card">
-        <h3>Macro Biology</h3>
-        <p>Inspiring content on the human body, ecosystems and nature’s cycles.</p>
-      </div>
-      <div class="card">
-        <h3>Micro Biology</h3>
-        <p>Meet the unseen world: cells, DNA and microbial life.</p>
-      </div>
-      <div class="card">
-        <h3>Neurology</h3>
-        <p>Uncover the brain’s mechanisms of memory, emotion and awareness.</p>
-      </div>
-      <div class="card">
-        <h3>Psychology</h3>
-        <p>Understand behavior, emotions and the subtle architecture of the mind.</p>
-      </div>
+    <section id="departments" class="grid">
+      <div class="card"><h3>Microbiology & Macrobiology</h3><p>From cells to ecosystems: the unseen and the seen layers of life.</p><span class="tag">DNA · Ecosystems</span></div>
+      <div class="card"><h3>Neurology & Psychology</h3><p>Scientific foundations of brain, memory, emotion and behavior.</p><span class="tag">Memory · Emotion</span></div>
+      <div class="card"><h3>Anatomy & Human Health</h3><p>Body systems, preventive health and lifelong wellbeing.</p><span class="tag">Physiology · Health</span></div>
+      <div class="card"><h3>Literature & Culture</h3><p>Where science language, narrative, culture and critical thinking meet.</p><span class="tag">Narrative · Critique</span></div>
+      <div class="card"><h3>Environmental Science</h3><p>Planetary health, sustainability and climate literacy.</p><span class="tag">Climate · Sustainability</span></div>
+      <div class="card"><h3>Physics & Chemistry</h3><p>Nature’s fundamental laws and the story of matter.</p><span class="tag">Energy · Matter</span></div>
     </section>
 
-    <footer>
-      © <span id="year"></span> WONDERNEST — Growing with science, gently. 🌙
-    </footer>
+    <section id="about" style="margin-top:28px" class="hero-card">
+      <h2 style="color:var(--sage-deep); margin-bottom:8px;">About</h2>
+      <p class="muted">WONDERNEST gently nurtures curiosity. We tell science in a warm, clear and sourced way; we explore and grow together.</p>
+    </section>
+
+    <footer>© <span id="year"></span> WONDERNEST — Growing with science, gently. 🌙</footer>
   </div>
+
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <div class="sparkle"><span></span><span></span><span></span><span></span><span></span></div>
 </body>
 </html>
