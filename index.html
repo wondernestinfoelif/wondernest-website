@@ -1,11 +1,107 @@
 <!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8">
-  <title>Wondernest</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Wondernest — Merakla Öğren</title>
+  <meta name="description" content="Wondernest: Herkes için erişilebilir, keyifli ve güvenilir öğrenme içerikleri." />
+  <meta property="og:title" content="Wondernest — Merakla Öğren" />
+  <meta property="og:description" content="Wondernest: Her yaşa uygun, bilimsel ve eğlenceli öğrenme platformu." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#FF8A00;--muted:#b7c1cd;--radius:14px;color-scheme: dark;}
+    *{box-sizing:border-box} html,body{height:100%;}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;background: linear-gradient(180deg,#071226 0%, #071a2b 60%);color:#e6eef8;line-height:1.5;padding:24px}
+    .container{max-width:1100px;margin:0 auto;}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#ffd19a);display:inline-grid;place-items:center;font-weight:700;color:#111;font-size:20px;box-shadow:0 6px 18px rgba(255,138,0,0.12)}
+    nav{display:flex;gap:14px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600;font-size:14px}
+    .cta{background:var(--accent);color:#111;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+    main{margin-top:28px;display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:start}
+    .hero{padding:28px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:var(--radius)}
+    .hero h1{margin:0;font-size:28px;line-height:1.05}
+    .hero p{color:var(--muted);margin-top:10px}
+    .features{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01)); padding:14px;border-radius:12px}
+    .aside{position:sticky;top:24px}
+    .subscribe{padding:18px;border-radius:12px;background:linear-gradient(90deg, rgba(10,20,30,0.7), rgba(10,20,40,0.6));}
+    input[type="email"]{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit;margin-top:10px}
+    footer{margin-top:40px;color:var(--muted);font-size:13px;padding:18px 0;border-top:1px solid rgba(255,255,255,0.02)}
+    @media (max-width:900px){main{grid-template-columns:1fr; padding-bottom:40px}.features{grid-template-columns:1fr}nav{display:none}}
+  </style>
 </head>
 <body>
-  <h1>Merhaba Wondernest!</h1>
-  <p>Bu, senin ilk web sayfan ✨</p>
+  <div class="container">
+    <header>
+      <div class="brand" aria-label="Wondernest brand">
+        <div class="logo" aria-hidden="true">W</div>
+        <div>
+          <div style="font-weight:700">Wondernest</div>
+          <div style="font-size:12px;color:var(--muted)">Bilimle, merakla öğren</div>
+        </div>
+      </div>
+      <nav role="navigation" aria-label="Ana menü">
+        <a href="#departments">Departmanlar</a>
+        <a href="#blog">Blog</a>
+        <a href="#about">Hakkımızda</a>
+        <a class="cta" href="#subscribe">Bültene Katıl</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-heading">
+        <h1 id="hero-heading">Wondernest — Merak eden herkes için bilimsel, samimi öğrenme.</h1>
+        <p>Departmanlarımız: Makro Biyoloji, Mikro Biyoloji, Nöroloji, Psikoloji ve Bilim İletişimi.</p>
+
+        <div class="features">
+          <div class="card"><h3 style="margin:0 0 6px">Kısa Kurslar</h3><p style="margin:0;color:var(--muted)">10–60 dakikalık modüller.</p></div>
+          <div class="card"><h3 style="margin:0 0 6px">Bilim Haberleri</h3><p style="margin:0;color:var(--muted)">Güncel ve kaynaklı.</p></div>
+          <div class="card"><h3 style="margin:0 0 6px">Topluluk</h3><p style="margin:0;color:var(--muted)">Webinarlar ve projeler.</p></div>
+          <div class="card"><h3 style="margin:0 0 6px">Kaynak Havuzu</h3><p style="margin:0;color:var(--muted)">Okuma listeleri.</p></div>
+        </div>
+
+        <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+          <a class="cta" href="#subscribe">Bültene Katıl</a>
+          <a style="color:var(--muted);text-decoration:none;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)" href="#about">Daha fazla bilgi</a>
+        </div>
+      </section>
+
+      <aside class="aside">
+        <div class="subscribe card" id="subscribe" aria-labelledby="sub-heading">
+          <h3 id="sub-heading" style="margin:0">Bültene katıl</h3>
+          <p style="margin:6px 0 0;color:var(--muted)">Haftada bir kısa ders ve ilham.</p>
+          <label for="email" style="display:block;font-size:13px;margin-top:12px">E-posta</label>
+          <input id="email" name="email" type="email" placeholder="email@ornek.com" aria-label="E-posta adresi girin">
+          <button style="margin-top:10px;width:100%;padding:10px;border-radius:8px;border:0;background:var(--accent);font-weight:700">Kaydol</button>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h4 style="margin:0 0 8px 0">Hızlı bağlantılar</h4>
+          <ul style="margin:0;padding:0 0 0 16px;color:var(--muted)">
+            <li><a href="#departments" style="color:var(--muted)">Departmanlar</a></li>
+            <li><a href="#blog" style="color:var(--muted)">Blog</a></li>
+            <li><a href="#contact" style="color:var(--muted)">İletişim</a></li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+
+    <section id="about" style="margin-top:28px" class="card">
+      <h2 style="margin-top:0">Hakkımızda</h2>
+      <p style="color:var(--muted)">Wondernest, bilimi anlaşılır kılmak için kuruldu. Öğrenmeyi keyifli hale getiren kısa dersler, uzman yazarlar ve öğrenci projeleriyle büyür.</p>
+    </section>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap">
+        <div>© <span id="yil"></span> Wondernest — Tüm hakları saklıdır.</div>
+        <div style="color:var(--muted)">Gizlilik Politikası · Kullanım Şartları</div>
+      </div>
+    </footer>
+  </div>
+  <script>document.getElementById('yil').textContent=new Date().getFullYear();</script>
 </body>
 </html>
