@@ -100,4 +100,150 @@
     }
     @keyframes floaty {
       0% { background-position: 5% 10%, 85% 20%, 15% 80%, 90% 75%; }
-      50% { background-position: 4% 12%, 83% 2
+      50% { background-position: 4% 12%, 83% 22%, 14% 78%, 88% 73%; }
+      100% { background-position: 6% 8%, 87% 18%, 16% 82%, 92% 77%; }
+    }
+
+    /* pastel parıltılar */
+    @keyframes sparkle {
+      0%,100% { transform: translateY(0) scale(1); opacity: 0.7; }
+      50% { transform: translateY(-4px) scale(1.05); opacity: 1; }
+    }
+    .sparkle {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: -1;
+    }
+    .sparkle span {
+      position: absolute;
+      width: 6px; height: 6px;
+      background: rgba(246,166,106,0.4);
+      border-radius: 50%;
+      animation: sparkle 4s ease-in-out infinite;
+    }
+    .sparkle span:nth-child(odd){ background: rgba(110,158,139,0.4); }
+    .sparkle span:nth-child(1){ top:20%; left:25%; animation-delay:0s;}
+    .sparkle span:nth-child(2){ top:40%; left:60%; animation-delay:1s;}
+    .sparkle span:nth-child(3){ top:70%; left:15%; animation-delay:2s;}
+    .sparkle span:nth-child(4){ top:80%; left:85%; animation-delay:3s;}
+    .sparkle span:nth-child(5){ top:10%; left:75%; animation-delay:1.5s;}
+
+    /* Grid */
+    .grid{
+      margin-top:28px;
+      display:grid; gap:18px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+    .card{
+      background:var(--white);
+      border:1px solid rgba(46,63,58,0.06);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:0 8px 18px rgba(46,63,58,0.06);
+      transition:transform .25s ease;
+    }
+    .card:hover{ transform: translateY(-4px) }
+    .card h3{color:var(--sage-deep); margin-bottom:6px}
+    .tag{display:inline-block;background:var(--nude); color:#4d4d4d; border-radius:999px; padding:4px 10px; font-size:12px; margin-top:6px}
+
+    footer{
+      margin-top:32px;
+      color:#6b756f;
+      font-size:14px;
+      text-align:center;
+      border-top:1px solid rgba(46,63,58,0.08);
+      padding-top:16px;
+    }
+
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      nav{display:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <!-- Logon: assets/logo.png yüklersen burada görünür; yoksa yazı kalır -->
+        <div class="logo">
+          <img src="assets/logo.png" alt="WONDERNEST logosu" onerror="this.outerHTML='<div class=\'name\'>WONDERNEST</div>'">
+        </div>
+        <div class="name">WONDERNEST</div>
+      </div>
+      <nav>
+        <a href="#departments">Departmanlar</a>
+        <a href="#about">Hakkımızda</a>
+        <a href="#join" class="cta">Bültene Katıl</a>
+        <a class="lang" href="en/index.html" aria-label="Switch to English">EN</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-card">
+        <h1>Merak et, nazikçe öğren. 🌿</h1>
+        <p class="muted">WONDERNEST; bilimi sadeleştiren, güvenilir kaynakla besleyen ve herkes için erişilebilir kılan huzurlu bir öğrenme alanıdır.</p>
+        <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap">
+          <!-- Yarın form linkin hazır olunca href'i güncelleyeceğiz -->
+          <a class="cta" id="join" href="#" onclick="alert('Bülten linkini yarın ekleyeceğiz 💌');return false;">Bültene Katıl</a>
+          <a href="#departments" style="text-decoration:none;border:1px solid rgba(46,63,58,0.12);padding:10px 16px;border-radius:14px;color:var(--ink);font-weight:600">Departmanları gör</a>
+        </div>
+      </div>
+      <div class="illustration" aria-hidden="true"></div>
+    </section>
+
+    <section id="departments" class="grid">
+      <!-- ✅ Güncel departmanlar -->
+      <div class="card">
+        <h3>Mikrobiyoloji & Makrobiyoloji</h3>
+        <p>Hücrelerden ekosistemlere: yaşamın görünmeyen ve görünen katmanları.</p>
+        <span class="tag">DNA · Ekosistem</span>
+      </div>
+      <div class="card">
+        <h3>Nöroloji & Psikoloji</h3>
+        <p>Beyin, bellek, duygu ve davranışın bilimsel temelleri.</p>
+        <span class="tag">Bellek · Duygu</span>
+      </div>
+      <div class="card">
+        <h3>Anatomi & İnsan Sağlığı</h3>
+        <p>Vücut sistemleri, koruyucu sağlık ve yaşam boyu iyi oluş.</p>
+        <span class="tag">Fizyoloji · Sağlık</span>
+      </div>
+      <div class="card">
+        <h3>Edebiyat & Kültür</h3>
+        <p>Bilim dili, anlatı, kültür ve eleştirel düşünmenin buluştuğu alan.</p>
+        <span class="tag">Anlatı · Eleştiri</span>
+      </div>
+      <div class="card">
+        <h3>Çevre Bilimi</h3>
+        <p>Gezegen sağlığı, sürdürülebilirlik ve iklim okuryazarlığı.</p>
+        <span class="tag">İklim · Sürdürülebilirlik</span>
+      </div>
+      <div class="card">
+        <h3>Fizik & Kimya</h3>
+        <p>Doğanın temel yasaları ve maddenin hikâyesi.</p>
+        <span class="tag">Enerji · Madde</span>
+      </div>
+    </section>
+
+    <section id="about" style="margin-top:28px" class="hero-card">
+      <h2 style="color:var(--sage-deep); margin-bottom:8px;">Hakkımızda</h2>
+      <p class="muted">WONDERNEST, merakı nazikçe besleyen bir topluluk. Bilimi sade, sıcak ve kaynaklı bir dille anlatıyoruz; birlikte keşfediyor, birlikte büyüyoruz.</p>
+    </section>
+
+    <footer>
+      © <span id="year"></span> WONDERNEST — Bilimle, huzurla büyü. 🌙
+    </footer>
+  </div>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+  <!-- ✨ pastel ışıltılar -->
+  <div class="sparkle">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+</body>
+</html>
