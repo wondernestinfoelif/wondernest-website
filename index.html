@@ -1,181 +1,149 @@
 <!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WONDERNEST — Merakla Öğren</title>
-  <meta name="description" content="WONDERNEST: Merakı nazikçe besleyen, sakin ve güvenilir bir öğrenme alanı.">
-  <link rel="alternate" href="index.html" hreflang="tr">
-  <link rel="alternate" href="en/index.html" hreflang="en">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    /* 🎨 Pinterest estetiği: adaçayı yeşili, şeftali turuncusu, nude/ten */
-    :root{
-      --bg1:#FAF5EF;  /* kremsi arkaplan */
-      --bg2:#F7EFE7;  /* yumuşak geçiş */
-      --sage:#6E9E8B; /* adaçayı */
-      --sage-deep:#487C69;
-      --peach:#F6A66A;/* şeftali/turuncu */
-      --nude:#F2E8DE; /* nude */
-      --tan:#E8CFB4;  /* ten/bej */
-      --ink:#2E3F3A;  /* koyu yeşilimsi yazı */
-      --white:#FFFFFF;
-      --radius:16px;
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      color:var(--ink);
-      line-height:1.6;
-      /* yumuşak degrade taban */
-      background:
-        radial-gradient(1200px 800px at 80% 0%, rgba(246,166,106,0.08), transparent 60%),
-        radial-gradient(900px 600px at 10% 20%, rgba(110,158,139,0.10), transparent 60%),
-        linear-gradient(180deg,var(--bg1) 0%, var(--bg2) 100%);
-      padding:24px;
-      min-height:100vh;
-    }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WONDERNEST — Her Yaşta Öğrenme, Eşitlik ve %100 Güncel Bilgi</title>
+<meta name="description" content="WONDERNEST: Her yaş için, eğitimde eşitlik ilkesine dayanan; %100 güncel ve kaynaklı içeriklerle öğrenme alanı.">
+<link rel="alternate" href="index.html" hreflang="tr">
+<link rel="alternate" href="en/index.html" hreflang="en">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  /* 🎨 Pinterest esini: adaçayı yeşili / şeftali turuncusu / nude-teni */
+  :root{
+    --bg1:#FAF5EF; --bg2:#F7EFE7;          /* yumuşak arka plan */
+    --sage:#6E9E8B; --sage-deep:#3F6E5C;   /* adaçayı */
+    --peach:#F6A66A; --peach-deep:#E9893D; /* şeftali/turuncu */
+    --nude:#F2E8DE; --tan:#E8CFB4;
+    --ink:#2E3F3A; --white:#FFFFFF;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    color:var(--ink); line-height:1.6; min-height:100vh; padding:24px;
+    background:
+      radial-gradient(1000px 700px at 80% 0%, rgba(246,166,106,0.10), transparent 60%),
+      radial-gradient(800px 520px at 10% 25%, rgba(110,158,139,0.12), transparent 60%),
+      linear-gradient(180deg,var(--bg1) 0%, var(--bg2) 100%);
+    overflow-x:hidden;
+  }
+  .container{max-width:1150px;margin:0 auto; position:relative}
 
-    .container{max-width:1100px;margin:0 auto}
+  /* Üst şerit */
+  header{
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    background: rgba(255,255,255,0.75); backdrop-filter: blur(8px);
+    border:1px solid rgba(46,63,58,0.06); border-radius:var(--radius);
+    padding:12px 16px; box-shadow:0 6px 18px rgba(46,63,58,0.06);
+    position:relative; z-index:2;
+  }
+  .brand{display:flex;align-items:center;gap:12px}
+  .logo img{height:54px;border-radius:12px;display:block}
+  .name{font-weight:700;letter-spacing:.5px}
+  nav a{
+    color:var(--ink); text-decoration:none; font-weight:600; margin-left:14px;
+    padding:6px 10px; border-radius:12px; border:1px solid transparent; transition:.25s;
+  }
+  nav a:hover{ border-color: rgba(46,63,58,0.12); transform: translateY(-1px) }
+  .cta{
+    background:linear-gradient(180deg,var(--peach),var(--peach-deep));
+    color:#2f2f2f; border-radius:24px; padding:10px 16px;
+    box-shadow:0 6px 14px rgba(246,166,106,0.25); text-decoration:none; font-weight:700; transition:transform .2s cubic-bezier(.2,.8,.2,1);
+  }
+  .cta:hover{ transform: translateY(-2px) scale(1.02) }
+  .lang{
+    margin-left:12px; padding:6px 10px; border-radius:999px;
+    background:rgba(110,158,139,0.15); text-decoration:none; color:var(--ink);
+    border:1px solid rgba(46,63,58,0.10); font-size:13px; transition:.25s;
+  }
+  .lang:hover{ background:rgba(110,158,139,0.25) }
 
-    /* Üst şerit */
-    header{
-      display:flex;align-items:center;justify-content:space-between;gap:16px;
-      background: rgba(255,255,255,0.7);
-      backdrop-filter: blur(6px);
-      border:1px solid rgba(46,63,58,0.06);
-      border-radius:var(--radius);
-      padding:12px 16px;
-      box-shadow:0 6px 18px rgba(46,63,58,0.06);
-    }
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo img{height:56px;border-radius:12px;display:block}
-    .name{font-weight:700;letter-spacing:.5px}
+  /* Hero */
+  .hero{ margin-top:28px; display:grid; grid-template-columns:1.15fr .85fr; gap:24px; align-items:center; position:relative; z-index:1 }
+  .hero-card{
+    background:var(--white); border:1px solid rgba(46,63,58,0.06); border-radius:var(--radius);
+    padding:26px; box-shadow:0 10px 24px rgba(46,63,58,0.08);
+    transform-style:preserve-3d; transition: transform .25s ease;
+  }
+  .hero-card:hover{ transform: perspective(900px) rotateX(2deg) rotateY(-2deg) translateZ(2px) }
+  h1{font-size:32px;line-height:1.15;color:var(--sage-deep);margin-bottom:10px}
+  .lede{font-weight:600; color:var(--ink)}
+  .muted{color:#5b6a66}
 
-    nav a{
-      color:var(--ink); text-decoration:none; font-weight:600; margin-left:14px;
-      padding:6px 10px; border-radius:12px; border:1px solid transparent;
-    }
-    nav a:hover{ border-color: rgba(46,63,58,0.12) }
-    .cta{
-      background:var(--peach); color:#2f2f2f; border-radius:24px; padding:10px 16px;
-      box-shadow:0 6px 14px rgba(246,166,106,0.25); text-decoration:none; font-weight:700
-    }
-    .lang{
-      margin-left:12px; padding:6px 10px; border-radius:999px;
-      background:rgba(110,158,139,0.15); text-decoration:none; color:var(--ink);
-      border:1px solid rgba(46,63,58,0.10); font-size:13px;
-    }
-    .lang:hover{ background:rgba(110,158,139,0.25) }
+  /* İllüstratif arka plan: yaprak + büyüteç + kitap + lab şişesi */
+  .scene{
+    min-height:280px; border-radius:var(--radius); position:relative;
+    background:
+      url('https://cdn.jsdelivr.net/gh/visualsources/wondernest-assets/leaves.svg') 6% 14% / 140px no-repeat,
+      url('https://cdn.jsdelivr.net/gh/visualsources/wondernest-assets/magnifier.svg') 84% 18% / 120px no-repeat,
+      url('https://cdn.jsdelivr.net/gh/visualsources/wondernest-assets/book.svg') 12% 78% / 120px no-repeat,
+      url('https://cdn.jsdelivr.net/gh/visualsources/wondernest-assets/flask.svg') 90% 76% / 100px no-repeat,
+      linear-gradient(180deg, rgba(242,232,222,0.55), rgba(242,232,222,0.35));
+    border:1px dashed rgba(46,63,58,0.08);
+    overflow:hidden;
+  }
+  .float{ position:absolute; inset:0; animation:floaty 40s infinite alternate ease-in-out; }
+  @keyframes floaty{
+    0%{ transform: translate3d(0,0,0) }
+    50%{ transform: translate3d(-6px,4px,0) }
+    100%{ transform: translate3d(6px,-4px,0) }
+  }
 
-    /* Hero */
-    .hero{
-      margin-top:28px; display:grid; grid-template-columns:1.1fr .9fr; gap:24px; align-items:center;
-    }
-    .hero-card{
-      background:var(--white);
-      border:1px solid rgba(46,63,58,0.06);
-      border-radius:var(--radius);
-      padding:24px;
-      box-shadow:0 10px 24px rgba(46,63,58,0.08);
-    }
-    h1{font-size:32px;line-height:1.15;color:var(--sage-deep);margin-bottom:10px}
-    .muted{color:#5b6a66}
+  /* Parıltı tozları */
+  @keyframes sparkle { 0%,100%{transform:translateY(0) scale(1);opacity:.6} 50%{transform:translateY(-4px) scale(1.05);opacity:1} }
+  .sparkle{ position:absolute; inset:0; pointer-events:none }
+  .sparkle span{ position:absolute; width:6px;height:6px;border-radius:50%;
+    background:rgba(246,166,106,.45); animation:sparkle 4s ease-in-out infinite }
+  .sparkle span:nth-child(odd){ background:rgba(110,158,139,.45) }
+  .sparkle span:nth-child(1){ top:18%; left:24%; animation-delay:0s}
+  .sparkle span:nth-child(2){ top:42%; left:60%; animation-delay:1s}
+  .sparkle span:nth-child(3){ top:72%; left:14%; animation-delay:2s}
+  .sparkle span:nth-child(4){ top:80%; left:86%; animation-delay:3s}
+  .sparkle span:nth-child(5){ top:10%; left:74%; animation-delay:1.5s}
 
-    /* Büyüteç/kitap/lab yapraklı illüstratif arka plan + hafif hareket */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background:
-        url('https://cdn.jsdelivr.net/gh/visualsources/wondernest-assets/leaves.svg') 5% 10% / 140px no-repeat,
-        url('https://cdn.jsdelivr.net/gh/visualsources/wondernest-assets/magnifier.svg') 85% 20% / 120px no-repeat,
-        url('https://cdn.jsdelivr.net/gh/visualsources/wondernest-assets/book.svg') 15% 80% / 120px no-repeat,
-        url('https://cdn.jsdelivr.net/gh/visualsources/wondernest-assets/flask.svg') 90% 75% / 100px no-repeat,
-        radial-gradient(circle at 30% 10%, rgba(246,166,106,0.15), transparent 50%),
-        radial-gradient(circle at 70% 80%, rgba(110,158,139,0.15), transparent 50%);
-      opacity: 0.8;
-      z-index: -1;
-      animation: floaty 40s infinite alternate ease-in-out;
-    }
-    @keyframes floaty {
-      0% { background-position: 5% 10%, 85% 20%, 15% 80%, 90% 75%; }
-      50% { background-position: 4% 12%, 83% 22%, 14% 78%, 88% 73%; }
-      100% { background-position: 6% 8%, 87% 18%, 16% 82%, 92% 77%; }
-    }
+  /* Kategoriler */
+  .section-title{margin-top:32px; font-size:22px; color:var(--sage-deep); display:flex; align-items:center; gap:10px}
+  .pill{background:var(--nude); color:#4d4d4d; border-radius:999px; padding:6px 12px; font-size:12px; font-weight:700}
+  .grid{ margin-top:18px; display:grid; gap:18px; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)) }
+  .card{
+    background:var(--white); border:1px solid rgba(46,63,58,0.06); border-radius:var(--radius);
+    padding:18px; box-shadow:0 8px 18px rgba(46,63,58,0.06); transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .card:hover{ transform: translateY(-4px); box-shadow:0 12px 26px rgba(46,63,58,0.10) }
+  .card h3{ color:var(--sage-deep); margin-bottom:6px }
+  .meta{ display:flex; gap:10px; flex-wrap:wrap; margin-top:8px }
+  .tag{ display:inline-block; background:var(--nude); color:#4d4d4d; border-radius:999px; padding:4px 10px; font-size:12px }
 
-    /* pastel parıltılar */
-    @keyframes sparkle {
-      0%,100% { transform: translateY(0) scale(1); opacity: 0.7; }
-      50% { transform: translateY(-4px) scale(1.05); opacity: 1; }
-    }
-    .sparkle {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      pointer-events: none;
-      overflow: hidden;
-      z-index: -1;
-    }
-    .sparkle span {
-      position: absolute;
-      width: 6px; height: 6px;
-      background: rgba(246,166,106,0.4);
-      border-radius: 50%;
-      animation: sparkle 4s ease-in-out infinite;
-    }
-    .sparkle span:nth-child(odd){ background: rgba(110,158,139,0.4); }
-    .sparkle span:nth-child(1){ top:20%; left:25%; animation-delay:0s;}
-    .sparkle span:nth-child(2){ top:40%; left:60%; animation-delay:1s;}
-    .sparkle span:nth-child(3){ top:70%; left:15%; animation-delay:2s;}
-    .sparkle span:nth-child(4){ top:80%; left:85%; animation-delay:3s;}
-    .sparkle span:nth-child(5){ top:10%; left:75%; animation-delay:1.5s;}
+  /* Alt Bilgi */
+  footer{ margin-top:34px; color:#6b756f; font-size:14px; text-align:center; border-top:1px solid rgba(46,63,58,0.08); padding-top:16px }
 
-    /* Grid */
-    .grid{
-      margin-top:28px;
-      display:grid; gap:18px;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    }
-    .card{
-      background:var(--white);
-      border:1px solid rgba(46,63,58,0.06);
-      border-radius:var(--radius);
-      padding:18px;
-      box-shadow:0 8px 18px rgba(46,63,58,0.06);
-      transition:transform .25s ease;
-    }
-    .card:hover{ transform: translateY(-4px) }
-    .card h3{color:var(--sage-deep); margin-bottom:6px}
-    .tag{display:inline-block;background:var(--nude); color:#4d4d4d; border-radius:999px; padding:4px 10px; font-size:12px; margin-top:6px}
+  /* Hareketi sevmeyenler için */
+  @media (prefers-reduced-motion: reduce){
+    .float, .sparkle span{ animation:none !important }
+    .hero-card:hover{ transform:none }
+    .cta:hover{ transform:none }
+  }
 
-    footer{
-      margin-top:32px;
-      color:#6b756f;
-      font-size:14px;
-      text-align:center;
-      border-top:1px solid rgba(46,63,58,0.08);
-      padding-top:16px;
-    }
-
-    @media (max-width:900px){
-      .hero{grid-template-columns:1fr}
-      nav{display:none}
-    }
-  </style>
+  /* Mobil */
+  @media (max-width:900px){
+    .hero{grid-template-columns:1fr}
+    nav{display:none}
+  }
+</style>
 </head>
 <body>
   <div class="container">
     <header>
       <div class="brand">
-        <!-- Logon: assets/logo.png yüklersen burada görünür; yoksa yazı kalır -->
+        <!-- Logon: assets/logo.png yüklediysen görünür; yoksa yazı kalır -->
         <div class="logo">
-          <img src="assets/logo.png" alt="WONDERNEST logosu" onerror="this.outerHTML='<div class=\'name\'>WONDERNEST</div>'">
+          <img src="assets/logo.png" alt="WONDERNEST logosu" onerror="this.style.display='none'">
         </div>
         <div class="name">WONDERNEST</div>
       </div>
       <nav>
-        <a href="#departments">Departmanlar</a>
+        <a href="#categories">Kategoriler</a>
         <a href="#about">Hakkımızda</a>
         <a href="#join" class="cta">Bültene Katıl</a>
         <a class="lang" href="en/index.html" aria-label="Switch to English">EN</a>
@@ -184,66 +152,77 @@
 
     <section class="hero">
       <div class="hero-card">
-        <h1>Merak et, nazikçe öğren. 🌿</h1>
-        <p class="muted">WONDERNEST; bilimi sadeleştiren, güvenilir kaynakla besleyen ve herkes için erişilebilir kılan huzurlu bir öğrenme alanıdır.</p>
+        <h1>Her yaşta öğrenme için; eşit, sıcak ve %100 güncel.</h1>
+        <p class="lede">WONDERNEST, <strong>eğitimde eşitlik</strong> ilkesine dayanır. Tüm içeriklerimiz <strong>%100 güncel</strong> ve <strong>kaynaklı</strong>dır; herkesin anlayacağı bir dilde sunulur.</p>
+        <p class="muted">Çocuk, genç, yetişkin… Merak eden herkes için sade anlatım, sağlam bilim ve nazik bir öğrenme ortamı.</p>
         <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap">
-          <!-- Yarın form linkin hazır olunca href'i güncelleyeceğiz -->
-          <a class="cta" id="join" href="#" onclick="alert('Bülten linkini yarın ekleyeceğiz 💌');return false;">Bültene Katıl</a>
-          <a href="#departments" style="text-decoration:none;border:1px solid rgba(46,63,58,0.12);padding:10px 16px;border-radius:14px;color:var(--ink);font-weight:600">Departmanları gör</a>
+          <a class="cta" href="#categories">Kategorileri Keşfet</a>
+          <!-- Bülten linkini yarın ekleyeceğiz -->
+          <a class="cta" id="join" href="#" onclick="alert('Bülten linkini yarın ekleyeceğiz 💌');return false;" style="background:linear-gradient(180deg,var(--nude),#e9d7c6)">Bültene Katıl</a>
         </div>
       </div>
-      <div class="illustration" aria-hidden="true"></div>
+      <div class="scene">
+        <div class="float"></div>
+        <div class="sparkle">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
     </section>
 
-    <section id="departments" class="grid">
-      <!-- ✅ Güncel departmanlar -->
-      <div class="card">
+    <h2 id="categories" class="section-title">Kategoriler <span class="pill">Her yaş için</span></h2>
+    <section class="grid">
+      <article class="card">
         <h3>Mikrobiyoloji & Makrobiyoloji</h3>
-        <p>Hücrelerden ekosistemlere: yaşamın görünmeyen ve görünen katmanları.</p>
-        <span class="tag">DNA · Ekosistem</span>
-      </div>
-      <div class="card">
+        <p>Hücrelerden ekosistemlere—yaşamın görünmeyen ve görünen katmanları.</p>
+        <div class="meta"><span class="tag">DNA</span><span class="tag">Ekosistem</span></div>
+      </article>
+      <article class="card">
         <h3>Nöroloji & Psikoloji</h3>
         <p>Beyin, bellek, duygu ve davranışın bilimsel temelleri.</p>
-        <span class="tag">Bellek · Duygu</span>
-      </div>
-      <div class="card">
+        <div class="meta"><span class="tag">Bellek</span><span class="tag">Duygu</span></div>
+      </article>
+      <article class="card">
         <h3>Anatomi & İnsan Sağlığı</h3>
         <p>Vücut sistemleri, koruyucu sağlık ve yaşam boyu iyi oluş.</p>
-        <span class="tag">Fizyoloji · Sağlık</span>
-      </div>
-      <div class="card">
+        <div class="meta"><span class="tag">Fizyoloji</span><span class="tag">Sağlık</span></div>
+      </article>
+      <article class="card">
         <h3>Edebiyat & Kültür</h3>
         <p>Bilim dili, anlatı, kültür ve eleştirel düşünmenin buluştuğu alan.</p>
-        <span class="tag">Anlatı · Eleştiri</span>
-      </div>
-      <div class="card">
+        <div class="meta"><span class="tag">Anlatı</span><span class="tag">Kültür</span></div>
+      </article>
+      <article class="card">
         <h3>Çevre Bilimi</h3>
         <p>Gezegen sağlığı, sürdürülebilirlik ve iklim okuryazarlığı.</p>
-        <span class="tag">İklim · Sürdürülebilirlik</span>
-      </div>
-      <div class="card">
+        <div class="meta"><span class="tag">İklim</span><span class="tag">Sürdürülebilirlik</span></div>
+      </article>
+      <article class="card">
         <h3>Fizik & Kimya</h3>
         <p>Doğanın temel yasaları ve maddenin hikâyesi.</p>
-        <span class="tag">Enerji · Madde</span>
-      </div>
+        <div class="meta"><span class="tag">Enerji</span><span class="tag">Madde</span></div>
+      </article>
+      <article class="card">
+        <h3>Elif Yıldız Projesi</h3>
+        <p>Toplumsal öğrenme ve erişilebilirlik: saha gözlemleri, atölyeler, mikro burs ve eşitlik odaklı içerikler.</p>
+        <div class="meta"><span class="tag">Eşitlik</span><span class="tag">Topluluk</span></div>
+      </article>
+      <article class="card">
+        <h3>Hurafe Avcısı: Türk Halkı Ne Biliyor?</h3>
+        <p>Yanlış kanıları nazikçe çürütüyoruz. Bilim ne diyor? Kaynaklı kısa açıklamalar ve “doğru-yanlış” kartları.</p>
+        <div class="meta"><span class="tag">Mit Çürütme</span><span class="tag">%100 Güncel</span></div>
+      </article>
     </section>
 
-    <section id="about" style="margin-top:28px" class="hero-card">
+    <section id="about" class="hero-card" style="margin-top:28px">
       <h2 style="color:var(--sage-deep); margin-bottom:8px;">Hakkımızda</h2>
-      <p class="muted">WONDERNEST, merakı nazikçe besleyen bir topluluk. Bilimi sade, sıcak ve kaynaklı bir dille anlatıyoruz; birlikte keşfediyor, birlikte büyüyoruz.</p>
+      <p class="muted">WONDERNEST, <strong>her yaşta öğrenmeyi</strong> herkes için mümkün kılmayı hedefler. Eşit erişim, açık dil, kaynaklı anlatım ve güncel bilim—hepsi aynı yuva içinde.</p>
     </section>
 
-    <footer>
-      © <span id="year"></span> WONDERNEST — Bilimle, huzurla büyü. 🌙
-    </footer>
+    <footer>© <span id="year"></span> WONDERNEST — Eşitlik, merak ve güvenilir bilgi. 🌙</footer>
   </div>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-
-  <!-- ✨ pastel ışıltılar -->
-  <div class="sparkle">
-    <span></span><span></span><span></span><span></span><span></span>
-  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
