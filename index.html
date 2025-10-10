@@ -4,149 +4,201 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WONDERNEST — Merakla Öğren</title>
-  <meta name="description" content="WONDERNEST: Merak eden herkes için huzurlu bir öğrenme alanı.">
+  <meta name="description" content="WONDERNEST: Merakı nazikçe besleyen, sakin ve güvenilir bir öğrenme alanı.">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --lacivert: #0A1C2B;
-      --turuncu: #F59B42;
-      --nude: #F2E8DE;
-      --metin: #2E2E2E;
-      --beyaz: #FFFFFF;
-      --radius: 16px;
+    /* 🎨 Pinterest estetiği: adaçayı yeşili, şeftali turuncusu, nude/ten */
+    :root{
+      --bg1:#FAF5EF;  /* kremsi arkaplan */
+      --bg2:#F7EFE7;  /* yumuşak geçiş */
+      --sage:#6E9E8B; /* adaçayı yeşili */
+      --sage-deep:#487C69;
+      --peach:#F6A66A;/* şeftali/turuncu */
+      --nude:#F2E8DE; /* nude */
+      --tan:#E8CFB4;  /* ten/bej */
+      --ink:#2E3F3A;  /* koyu yeşilimsi yazı */
+      --white:#FFFFFF;
+      --radius:16px;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(180deg, var(--lacivert) 0%, #122a41 60%);
-      color: var(--beyaz);
-      line-height: 1.6;
-      padding: 24px;
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--ink);
+      line-height:1.6;
+      /* yumuşak degrade + çok hafif büyüteç deseni */
+      background:
+        radial-gradient(1200px 800px at 80% 0%, rgba(246,166,106,0.08), transparent 60%),
+        radial-gradient(900px 600px at 10% 20%, rgba(110,158,139,0.10), transparent 60%),
+        linear-gradient(180deg,var(--bg1) 0%, var(--bg2) 100%);
+      padding:24px;
+      min-height:100vh;
     }
-    .container { max-width: 1100px; margin: 0 auto; }
-    header {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.08);
+
+    /* Üst şerit */
+    .container{max-width:1100px;margin:0 auto}
+    header{
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(6px);
+      border:1px solid rgba(46,63,58,0.06);
+      border-radius:var(--radius);
+      padding:12px 16px;
+      box-shadow:0 6px 18px rgba(46,63,58,0.06);
     }
-    .logo {
-      background: var(--turuncu);
-      color: var(--lacivert);
-      font-weight: 700;
-      padding: 10px 16px;
-      border-radius: var(--radius);
-      font-size: 22px;
-      letter-spacing: 1px;
-      box-shadow: 0 4px 14px rgba(245,155,66,0.3);
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo img{height:56px;border-radius:12px;display:block}
+    .name{font-weight:700;letter-spacing:.5px}
+
+    nav a{
+      color:var(--ink); text-decoration:none; font-weight:600; margin-left:14px;
+      padding:6px 10px; border-radius:12px; border:1px solid transparent;
     }
-    nav a {
-      color: var(--nude);
-      margin-left: 16px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
+    nav a:hover{ border-color: rgba(46,63,58,0.12) }
+    .cta{
+      background:var(--peach); color:#2f2f2f; border-radius:24px; padding:10px 16px;
+      box-shadow:0 6px 14px rgba(246,166,106,0.25); text-decoration:none; font-weight:700
     }
-    nav a:hover { color: var(--turuncu); }
-    .hero {
-      margin-top: 60px;
-      text-align: center;
+
+    /* Hero */
+    .hero{
+      margin-top:28px; display:grid; grid-template-columns:1.1fr .9fr; gap:24px; align-items:center;
     }
-    .hero h1 {
-      font-size: 34px;
-      font-weight: 700;
-      color: var(--nude);
+    .hero-card{
+      background:var(--white);
+      border:1px solid rgba(46,63,58,0.06);
+      border-radius:var(--radius);
+      padding:24px;
+      box-shadow:0 10px 24px rgba(46,63,58,0.08);
     }
-    .hero p {
-      max-width: 700px;
-      margin: 20px auto;
-      color: rgba(255,255,255,0.85);
-      font-weight: 300;
+    h1{font-size:32px;line-height:1.15;color:var(--sage-deep);margin-bottom:10px}
+    .muted{color:#5b6a66}
+
+    /* Büyüteç illüstrasyonu (çok hafif) */
+    .illustration{
+      background:
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400"><g fill="none" stroke="%236E9E8B" stroke-opacity="0.18" stroke-width="6"><circle cx="260" cy="160" r="90"/><line x1="320" y1="220" x2="420" y2="320" stroke-linecap="round"/></g><g fill="%23F6A66A" fill-opacity="0.18"><circle cx="260" cy="160" r="28"/></g></svg>')
+        center/contain no-repeat;
+      min-height:260px;
+      border-radius:var(--radius);
+      border:1px dashed rgba(46,63,58,0.08);
+      background-color: rgba(242,232,222,0.55);
     }
-    .cta {
-      background: var(--turuncu);
-      color: var(--lacivert);
-      padding: 12px 24px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.3s;
+
+    /* Departmanlar */
+    .grid{
+      margin-top:28px;
+      display:grid; gap:18px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     }
-    .cta:hover { background: #ffb469; }
-    .sections {
-      margin-top: 60px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 24px;
+    .card{
+      background:var(--white);
+      border:1px solid rgba(46,63,58,0.06);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:0 8px 18px rgba(46,63,58,0.06);
+      transition:transform .25s ease;
     }
-    .card {
-      background: var(--beyaz);
-      color: var(--metin);
-      padding: 24px;
-      border-radius: var(--radius);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-      transition: transform 0.3s;
+    .card:hover{ transform: translateY(-4px) }
+    .card h3{color:var(--sage-deep); margin-bottom:6px}
+    .tag{display:inline-block;background:var(--nude); color:#4d4d4d; border-radius:999px; padding:4px 10px; font-size:12px; margin-top:6px}
+
+    /* Footer */
+    footer{
+      margin-top:32px;
+      color:#6b756f;
+      font-size:14px;
+      text-align:center;
+      border-top:1px solid rgba(46,63,58,0.08);
+      padding-top:16px;
     }
-    .card:hover { transform: translateY(-6px); }
-    .card h3 {
-      color: var(--lacivert);
-      margin-bottom: 8px;
+
+    /* Dil düğmesi */
+    .lang{
+      margin-left:12px; padding:6px 10px; border-radius:999px;
+      background:rgba(110,158,139,0.15); text-decoration:none; color:var(--ink);
+      border:1px solid rgba(46,63,58,0.10); font-size:13px;
     }
-    footer {
-      margin-top: 60px;
-      text-align: center;
-      color: var(--nude);
-      font-size: 14px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      padding-top: 20px;
-    }
-    @media (max-width: 600px) {
-      .hero h1 { font-size: 26px; }
+    .lang:hover{ background:rgba(110,158,139,0.25) }
+
+    /* Mobil */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      nav{display:none}
     }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <div class="logo">WONDERNEST</div>
+      <div class="brand">
+        <!-- Logon: /assets/logo.png yüklediysen burada görünür -->
+        <div class="logo"><img src="assets/logo.png" alt="WONDERNEST logosu"></div>
+        <div class="name">WONDERNEST</div>
+      </div>
       <nav>
         <a href="#departments">Departmanlar</a>
-        <a href="#blog">Blog</a>
         <a href="#about">Hakkımızda</a>
-        <a href="#join">Katıl</a>
+        <a href="#join" class="cta">Bültene Katıl</a>
         <a class="lang" href="en/index.html" aria-label="Switch to English">EN</a>
-        <a class="lang" href="../index.html" aria-label="Switch to Turkish">TR</a>
       </nav>
     </header>
 
     <section class="hero">
-      <h1>Merak et, öğren, paylaş. 🌿</h1>
-      <p>WONDERNEST; bilimi herkes için erişilebilir, sade ve huzurlu hale getiren bir öğrenme alanıdır.  
-      Biyoloji, psikoloji, nöroloji ve daha fazlasını; merakınla keşfet.</p>
-      <a href="#join" class="cta">Bültene Katıl</a>
+      <div class="hero-card">
+        <h1>Merak et, nazikçe öğren. 🌿</h1>
+        <p class="muted">WONDERNEST; bilimi sadeleştiren, güvenilir kaynakla besleyen ve herkes için erişilebilir kılan huzurlu bir öğrenme alanıdır.</p>
+        <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap">
+          <a class="cta" id="join" href="#" onclick="alert('Bülten linkini birazdan ekleyeceğiz 💌');return false;">Bültene Katıl</a>
+          <a href="#departments" style="text-decoration:none;border:1px solid rgba(46,63,58,0.12);padding:10px 16px;border-radius:14px;color:var(--ink);font-weight:600">Departmanları gör</a>
+        </div>
+      </div>
+      <div class="illustration" aria-hidden="true"></div>
     </section>
 
-    <section class="sections" id="departments">
+    <section id="departments" class="grid">
+      <!-- ✅ Güncel departmanlar -->
       <div class="card">
-        <h3>Makro Biyoloji</h3>
-        <p>İnsan vücudu, ekosistemler ve doğanın döngüleri üzerine ilham veren içerikler.</p>
+        <h3>Mikrobiyoloji & Makrobiyoloji</h3>
+        <p>Hücrelerden ekosistemlere: yaşamın görünmeyen ve görünen katmanları.</p>
+        <span class="tag">DNA · Ekosistem</span>
       </div>
       <div class="card">
-        <h3>Mikro Biyoloji</h3>
-        <p>Gözle göremediğimiz dünyayı; hücreler, DNA ve mikroskobik yaşamla tanı.</p>
+        <h3>Nöroloji & Psikoloji</h3>
+        <p>Beyin, bellek, duygu ve davranışın bilimsel temelleri.</p>
+        <span class="tag">Bellek · Duygu</span>
       </div>
       <div class="card">
-        <h3>Nöroloji</h3>
-        <p>Beynin sırlarını çöz: bellek, duygu ve farkındalık mekanizmalarını keşfet.</p>
+        <h3>Anatomi & İnsan Sağlığı</h3>
+        <p>Vücut sistemleri, koruyucu sağlık ve yaşam boyu iyi oluş.</p>
+        <span class="tag">Fizyoloji · Sağlık</span>
       </div>
       <div class="card">
-        <h3>Psikoloji</h3>
-        <p>Davranışlarımızı, duygularımızı ve insan zihninin gizli yapılarını anla.</p>
+        <h3>Edebiyat & Kültür</h3>
+        <p>Bilim dili, anlatı, kültür ve eleştirel düşünmenin buluştuğu alan.</p>
+        <span class="tag">Anlatı · Eleştiri</span>
       </div>
+      <div class="card">
+        <h3>Çevre Bilimi</h3>
+        <p>Gezegen sağlığı, sürdürülebilirlik ve iklim okuryazarlığı.</p>
+        <span class="tag">İklim · Sürdürülebilirlik</span>
+      </div>
+      <div class="card">
+        <h3>Fizik & Kimya</h3>
+        <p>Doğanın temel yasaları ve maddenin hikâyesi.</p>
+        <span class="tag">Enerji · Madde</span>
+      </div>
+    </section>
+
+    <section id="about" style="margin-top:28px" class="hero-card">
+      <h2 style="color:var(--sage-deep); margin-bottom:8px;">Hakkımızda</h2>
+      <p class="muted">WONDERNEST, merakı nazikçe besleyen bir topluluk. Bilimi sade, sıcak ve kaynaklı bir dille anlatıyoruz; birlikte keşfediyor, birlikte büyüyoruz.</p>
     </section>
 
     <footer>
       © <span id="year"></span> WONDERNEST — Bilimle, huzurla büyü. 🌙
     </footer>
   </div>
+
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
