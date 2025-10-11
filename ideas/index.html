@@ -1,1 +1,72 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>İçerik Fikriniz mi Var? — WONDERNEST</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg1:#0d1b2a; --bg2:#1b263b; --aurora1:#5ef1c3; --aurora2:#a9f8ff; --aurora3:#f7a8b8;
+  --text:#f8f9fa; --muted:#cfd8dc; --accent:#f6a66a; --radius:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Poppins',sans-serif; color:var(--text);
+  background:radial-gradient(ellipse at top,var(--bg1),var(--bg2));
+  min-height:100vh; overflow-x:hidden; padding:40px 20px;
+}
+.aurora{
+  position:fixed; inset:0; z-index:-1;
+  background:linear-gradient(120deg,var(--aurora1),var(--aurora2),var(--aurora3));
+  opacity:0.25; filter:blur(120px); animation:flow 10s ease-in-out infinite alternate;
+}
+@keyframes flow{0%{transform:translateY(0)}100%{transform:translateY(-10%) translateX(5%)}}
+.container{max-width:700px;margin:0 auto;text-align:center}
+h1{font-size:34px;color:var(--aurora2);margin-bottom:10px;text-shadow:0 0 12px rgba(255,255,255,0.2)}
+p.sub{color:var(--muted);margin-bottom:40px}
+form{
+  background:rgba(255,255,255,0.08);border-radius:var(--radius);
+  padding:30px;backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.15);box-shadow:0 0 25px rgba(255,255,255,0.05);
+}
+label{display:block;text-align:left;margin-top:16px;margin-bottom:6px;font-weight:600;color:var(--aurora3)}
+input,textarea{
+  width:100%;padding:12px;border:none;border-radius:10px;
+  background:rgba(255,255,255,0.15);color:var(--text);font-family:inherit;font-size:15px;
+}
+input:focus,textarea:focus{outline:2px solid var(--accent)}
+button{
+  margin-top:22px;background:var(--accent);color:#222;
+  border:none;padding:12px 26px;border-radius:999px;font-weight:700;
+  cursor:pointer;transition:.3s;
+}
+button:hover{transform:scale(1.05)}
+footer{margin-top:60px;color:var(--muted);font-size:14px;text-align:center;border-top:1px solid rgba(255,255,255,0.1);padding-top:20px}
+</style>
+</head>
+<body>
+<div class="aurora"></div>
 
+<div class="container">
+  <h1>İçerik Fikriniz mi Var?</h1>
+  <p class="sub">WONDERNEST'i hep birlikte geliştirelim 🌿  
+  Aklınıza gelen yazı önerilerini, konu tavsiyelerini veya geliştirme fikirlerini bizimle paylaşabilirsiniz.</p>
+
+  <form action="https://formspree.io/f/https://formspree.io/f/xldppkdp" method="POST">
+    <label for="name">Adınız (isteğe bağlı)</label>
+    <input type="text" id="name" name="name" placeholder="Adınızı yazabilirsiniz">
+
+    <label for="email">E-posta (isteğe bağlı)</label>
+    <input type="email" id="email" name="email" placeholder="İsterseniz iletişim için e-posta bırakın">
+
+    <label for="message">Fikriniz / Tavsiyeniz</label>
+    <textarea id="message" name="message" rows="6" placeholder="Örneğin: 'Sirkadiyen ritimle ilgili bir yazı görmek isterim.'"></textarea>
+
+    <button type="submit">Fikrimi Gönder 💡</button>
+  </form>
+
+  <footer>© 2025 WONDERNEST • Birlikte öğren, birlikte üret 💫</footer>
+</div>
+</body>
+</html>
