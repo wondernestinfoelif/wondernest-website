@@ -3,219 +3,129 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>WONDERNEST — Her Yaşta Öğrenme • Eşitlik • %100 Güncel</title>
-<meta name="description" content="WONDERNEST: Her yaş için, eğitimde eşitlik ve %100 güncel, kaynaklı içeriklerle huzurlu bir öğrenme alanı.">
-<link rel="alternate" href="index.html" hreflang="tr">
-<link rel="alternate" href="en/index.html" hreflang="en">
+<title>WONDERNEST — Her Yaşta Öğrenme ve Keşif</title>
+<meta name="description" content="WONDERNEST: Eğitimde eşitlik ve %100 güncel bilgilerle dolu, her yaş için ilham verici bir öğrenme alanı.">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg1:#FAF5EF; --bg2:#F4EEE8;
-  --sage:#6E9E8B; --sage-deep:#3F6E5C;
-  --peach:#F6A66A; --peach-deep:#E9893D;
-  --ink:#2E3F3A; --muted:#66736E;
-  --white:#fff; --radius:16px;
+  --bg1:#0d1b2a; --bg2:#1b263b; --aurora1:#5ef1c3; --aurora2:#a9f8ff; --aurora3:#f7a8b8;
+  --text:#f8f9fa; --muted:#cfd8dc; --accent:#f6a66a; --radius:18px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{
-  font-family:'Poppins',system-ui,Segoe UI,Roboto,Arial,sans-serif;
-  color:var(--ink); line-height:1.6; min-height:100vh; padding:24px;
-  background:
-    radial-gradient(900px 600px at 85% 0%, rgba(246,166,106,0.12), transparent 60%),
-    radial-gradient(800px 500px at 10% 25%, rgba(110,158,139,0.12), transparent 60%),
-    linear-gradient(180deg,var(--bg1),var(--bg2));
-  overflow-x:hidden;
+  font-family:'Poppins',sans-serif;
+  color:var(--text); background:radial-gradient(ellipse at top,var(--bg1),var(--bg2));
+  min-height:100vh; overflow-x:hidden;
 }
-.container{max-width:1150px;margin:0 auto; position:relative}
+
+/* Aurora Background Animation */
+.aurora{
+  position:fixed; inset:0; z-index:-1; overflow:hidden; background:linear-gradient(120deg,var(--aurora1),var(--aurora2),var(--aurora3));
+  opacity:0.3; filter:blur(100px); animation:flow 10s ease-in-out infinite alternate;
+}
+@keyframes flow{
+  0%{transform:translateY(0)}
+  100%{transform:translateY(-10%) translateX(5%)}
+}
 
 /* Header */
 header{
-  display:flex; align-items:center; justify-content:space-between; gap:16px;
-  background:rgba(255,255,255,0.82); backdrop-filter:blur(8px);
-  border:1px solid #00000010; border-radius:var(--radius);
-  padding:12px 16px; box-shadow:0 8px 24px rgba(0,0,0,.06);
+  display:flex; justify-content:space-between; align-items:center;
+  padding:20px 60px; background:rgba(0,0,0,0.3); backdrop-filter:blur(10px);
+  position:sticky; top:0; z-index:10;
 }
-.brand{display:flex; align-items:center; gap:12px}
-.logo img{height:54px; border-radius:12px; display:block}
-.name{font-weight:700; letter-spacing:.4px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo img{height:50px;border-radius:10px}
+.logo span{font-weight:700;font-size:20px;color:var(--text);letter-spacing:.8px}
 nav a{
-  color:var(--ink); text-decoration:none; font-weight:600; margin-left:14px;
-  padding:6px 10px; border-radius:12px; border:1px solid transparent; transition:.25s;
+  color:var(--text); text-decoration:none; margin-left:20px; font-weight:600;
+  padding:8px 12px; border-radius:12px; transition:.25s;
 }
-nav a:hover{ border-color:#00000020; transform:translateY(-1px) }
+nav a:hover{background:rgba(255,255,255,0.15)}
 .cta{
-  background:linear-gradient(180deg,var(--peach),var(--peach-deep));
-  color:#2f2f2f; border-radius:999px; padding:9px 14px; text-decoration:none; font-weight:700;
-  box-shadow:0 8px 16px rgba(246,166,106,.25); transition:transform .2s;
+  background:var(--accent); color:#222; border-radius:999px; padding:8px 16px; margin-left:20px;
+  font-weight:700; text-decoration:none; transition:.2s;
 }
-.cta:hover{ transform:translateY(-2px) scale(1.02) }
-.lang{
-  margin-left:12px; padding:6px 10px; border-radius:999px;
-  background:rgba(110,158,139,.15); border:1px solid #00000012; text-decoration:none; color:var(--ink);
-}
+.cta:hover{transform:scale(1.05)}
 
-/* Hero */
-.hero{ margin-top:28px; display:grid; grid-template-columns:1.1fr .9fr; gap:24px; align-items:center }
-.hero-card{
-  background:var(--white); border:1px solid #00000010; border-radius:var(--radius);
-  padding:26px; box-shadow:0 12px 26px rgba(0,0,0,.08);
+/* Hero Section */
+.hero{
+  text-align:center; padding:100px 30px;
+  background:linear-gradient(180deg,transparent,rgba(255,255,255,0.05) 50%,transparent);
 }
-h1{font-size:32px; line-height:1.15; color:var(--sage-deep); margin-bottom:10px}
-.lede{font-weight:600}
-.muted{color:var(--muted)}
-.scene{
-  min-height:260px; border-radius:var(--radius);
-  background:
-    conic-gradient(from 140deg at 20% 30%, rgba(110,158,139,.15), transparent 30%),
-    conic-gradient(from -30deg at 80% 70%, rgba(246,166,106,.15), transparent 40%),
-    linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,.35));
-  border:1px dashed #00000012; position:relative; overflow:hidden;
+.hero h1{font-size:46px; color:var(--aurora2); text-shadow:0 0 12px rgba(255,255,255,0.3)}
+.hero p{font-size:18px; color:var(--muted); max-width:700px; margin:20px auto}
+.hero button{
+  background:var(--accent); color:#222; border:none; padding:12px 28px;
+  border-radius:999px; font-weight:700; margin-top:16px; cursor:pointer;
+  transition:.3s;
 }
-.sparkle{ position:absolute; inset:0; pointer-events:none }
-.sparkle span{
-  position:absolute; width:6px; height:6px; border-radius:50%;
-  background:rgba(246,166,106,.45); animation:sp 4s ease-in-out infinite;
-}
-.sparkle span:nth-child(odd){ background:rgba(110,158,139,.45) }
-@keyframes sp{0%,100%{transform:translateY(0);opacity:.7}50%{transform:translateY(-4px);opacity:1}}
-.sparkle span:nth-child(1){top:18%;left:24%}
-.sparkle span:nth-child(2){top:42%;left:60%}
-.sparkle span:nth-child(3){top:72%;left:14%}
-.sparkle span:nth-child(4){top:80%;left:86%}
-.sparkle span:nth-child(5){top:10%;left:74%}
+.hero button:hover{transform:scale(1.05)}
 
-/* Sections */
-.section-title{margin-top:30px; font-size:22px; color:var(--sage-deep)}
-.grid{ margin-top:16px; display:grid; gap:18px; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)) }
+/* Departments */
+section{padding:80px 60px;text-align:center}
+section h2{font-size:28px;margin-bottom:20px;color:var(--aurora2)}
+.grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;
+}
 .card{
-  background:var(--white); border:1px solid #00000010; border-radius:var(--radius);
-  padding:18px; box-shadow:0 10px 22px rgba(0,0,0,.07); transition:.25s;
-  background-image:linear-gradient(150deg, rgba(246,166,106,.05), rgba(110,158,139,.05));
+  background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.1);
+  padding:20px; border-radius:var(--radius); backdrop-filter:blur(8px);
+  transition:.3s; box-shadow:0 0 20px rgba(255,255,255,0.05);
 }
-.card:hover{ transform:translateY(-4px); box-shadow:0 14px 28px rgba(0,0,0,.10) }
-.card h3{ color:var(--sage-deep); margin-bottom:6px }
-.tag{ display:inline-block; background:var(--bg2); color:#444; border-radius:999px; padding:4px 10px; font-size:12px; margin-top:6px; margin-right:6px }
+.card:hover{transform:translateY(-5px); background:rgba(255,255,255,0.12)}
+.card h3{color:var(--aurora3); margin-bottom:8px}
+.card p{color:var(--muted); font-size:14px}
 
-/* Team */
-.team{ margin-top:24px; display:grid; gap:18px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)) }
-.team .member{
-  background:var(--white); border:1px solid #00000010; border-radius:var(--radius);
-  padding:16px; box-shadow:0 8px 20px rgba(0,0,0,.06);
+/* Footer */
+footer{
+  text-align:center; padding:40px 20px; color:var(--muted);
+  font-size:14px; border-top:1px solid rgba(255,255,255,0.15);
 }
-.member h4{ color:var(--sage-deep); margin-bottom:8px; font-size:18px }
-.member ul{ margin-left:18px; color:var(--muted) }
-.member li{ margin:4px 0 }
-
-/* Footer & mobile */
-footer{margin-top:34px; color:#6b756f; font-size:14px; text-align:center; border-top:1px solid #00000012; padding-top:16px}
-@media (max-width:900px){ .hero{grid-template-columns:1fr} nav{display:none} }
 </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="brand">
-        <div class="logo"><img src="assets/logo.png" alt="WONDERNEST" onerror="this.style.display='none'"></div>
-        <div class="name">WONDERNEST</div>
-      </div>
-      <nav>
-        <a href="#categories">Kategoriler</a>
-        <a href="#about">Hakkımızda</a>
-        <a href="hurafe/index.html">Hurafe Avcısı</a>
-        <a href="#team">Ekibimiz</a>
-        <a class="cta" href="#join" onclick="alert('Bülten linkini yarın ekleyeceğiz 💌');return false;">Bültene Katıl</a>
-        <a class="lang" href="en/index.html" aria-label="Switch to English">EN</a>
-      </nav>
-    </header>
 
-    <section class="hero">
-      <div class="hero-card">
-        <h1>Her yaşta öğrenme; eşit, sıcak ve %100 güncel.</h1>
-        <p class="lede">WONDERNEST, <strong>eğitimde eşitlik</strong> ilkesine dayanır. Tüm içerikler <strong>%100 güncel</strong> ve <strong>kaynaklı</strong>dır; herkesin anlayacağı bir dille sunulur.</p>
-        <p class="muted">Çocuk, genç, yetişkin… Merak eden herkes için sade anlatım, sağlam bilim ve nazik bir öğrenme ortamı.</p>
-      </div>
-      <div class="scene" aria-hidden="true">
-        <div class="sparkle"><span></span><span></span><span></span><span></span><span></span></div>
-      </div>
-    </section>
+<div class="aurora"></div>
 
-    <h2 id="categories" class="section-title">Kategoriler</h2>
-    <section class="grid">
-      <article class="card"><h3>Mikrobiyoloji & Makrobiyoloji</h3><p>Hücrelerden ekosistemlere: yaşamın katmanları.</p><span class="tag">DNA</span><span class="tag">Ekosistem</span></article>
-      <article class="card"><h3>Nöroloji & Psikoloji</h3><p>Beyin, bellek, duygu ve davranışın temelleri.</p><span class="tag">Bellek</span><span class="tag">Duygu</span></article>
-      <article class="card"><h3>Anatomi & İnsan Sağlığı</h3><p>Vücut sistemleri, koruyucu sağlık ve iyi oluş.</p><span class="tag">Fizyoloji</span><span class="tag">Sağlık</span></article>
-      <article class="card"><h3>Edebiyat & Kültür</h3><p>Bilim dili, anlatı, kültür ve eleştirel düşünme.</p><span class="tag">Anlatı</span><span class="tag">Kültür</span></article>
-      <article class="card"><h3>Çevre Bilimi</h3><p>Gezegen sağlığı, sürdürülebilirlik ve iklim okuryazarlığı.</p><span class="tag">İklim</span><span class="tag">Doğa</span></article>
-      <article class="card"><h3>Fizik & Kimya</h3><p>Doğanın temel yasaları ve maddenin hikâyesi.</p><span class="tag">Enerji</span><span class="tag">Madde</span></article>
-      <article class="card"><h3>Hurafe Avcısı</h3><p>Türk halkının doğru bildiği yanlışlar: bilimin cevabı.</p><span class="tag">Mit Çürütme</span><span class="tag">%100 Güncel</span></article>
-    </section>
-
-    <section id="about" class="hero-card" style="margin-top:28px">
-      <h2 style="color:var(--sage-deep); margin-bottom:8px;">Hakkımızda</h2>
-      <p class="muted">WONDERNEST, herkes için erişilebilir bir öğrenme yuvasıdır. Eşit erişim, açık dil, kaynaklı anlatım ve taze bilim aynı çatı altında.</p>
-    </section>
-
-    <!-- EKİP -->
-    <h2 id="team" class="section-title">Ekibimizle Tanışın — 2025–2026 Departman Ekibimiz</h2>
-    <section class="team">
-      <div class="member">
-        <h4>Mikrobiyoloji & Makrobiyoloji</h4>
-        <ul>
-          <li>Hayrunnisa Kobak</li>
-          <li>İlker Yasin</li>
-          <li>Elif Yıldız</li>
-          <li>Kaan Efe Akgül</li>
-        </ul>
-      </div>
-      <div class="member">
-        <h4>Nöroloji & Psikoloji</h4>
-        <ul>
-          <li>Hasibe Daşman</li>
-          <li>Elif Yıldız</li>
-          <li>Hayrunnisa Kobak</li>
-          <li>Nehir Ela Güngör</li>
-          <li>Mehveş Naz Günoğlu</li>
-        </ul>
-      </div>
-      <div class="member">
-        <h4>Anatomi & İnsan Sağlığı</h4>
-        <ul>
-          <li>Elif Yıldız</li>
-          <li>Hasan Tarık Doğan</li>
-          <li>İlker Yasin</li>
-        </ul>
-      </div>
-      <div class="member">
-        <h4>Edebiyat & Kültür</h4>
-        <ul>
-          <li>Doruk Has</li>
-          <li>Zeynep Nehir Biçer</li>
-          <li>Yağız Söylemez</li>
-        </ul>
-      </div>
-      <div class="member">
-        <h4>Çevre Bilimi</h4>
-        <ul>
-          <li>Zeynep Nehir Biçer</li>
-          <li>Duru Umdu</li>
-          <li>Hayrunnisa Atçı</li>
-        </ul>
-      </div>
-      <div class="member">
-        <h4>Fizik & Kimya</h4>
-        <ul>
-          <li>Hasan Tarık Doğan</li>
-          <li>Doruk Has</li>
-          <li>Hasibe Daşman</li>
-          <li>Duru Umdu</li>
-          <li>Nur Sima Karhan</li>
-        </ul>
-      </div>
-    </section>
-
-    <footer>© <span id="year"></span> WONDERNEST — Eşitlik, merak ve güvenilir bilgi. 🌙</footer>
+<header>
+  <div class="logo">
+    <img src="assets/logo.png" alt="WONDERNEST">
+    <span>WONDERNEST</span>
   </div>
+  <nav>
+    <a href="hurafe/index.html">Hurafe Avcısı</a>
+    <a href="departments/index.html">Departmanlar</a>
+    <a href="team/index.html">Ekibimizle Tanışın</a>
+    <a href="newsletter/index.html">Bülten</a>
+    <a href="ideas/index.html">İçerik Fikriniz mi Var?</a>
+    <a href="contact/index.html">İletişim</a>
+    <a class="cta" href="en/index.html">EN</a>
+  </nav>
+</header>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<section class="hero">
+  <h1>Her Yaşta Öğrenme • Eşitlik • Keşif</h1>
+  <p>WONDERNEST, her yaştan insanın merakını besleyip bilgisini büyütebileceği, %100 güncel ve eşitlik temelli bir öğrenme alanıdır.  
+  Bilim, kültür ve yaratıcılık burada buluşuyor.</p>
+  <button onclick="window.location.href='departments/index.html'">Departmanlara Göz At</button>
+</section>
+
+<section id="departments">
+  <h2>Departmanlarımız</h2>
+  <div class="grid">
+    <div class="card"><h3>🦠 Mikrobiyoloji & Makrobiyoloji</h3><p>Yaşamın en küçükten en büyüğe tüm katmanlarını keşfet.</p></div>
+    <div class="card"><h3>🧠 Nöroloji & Psikoloji</h3><p>Beynin derinliklerine, davranışın köklerine in.</p></div>
+    <div class="card"><h3>🫀 Anatomi & İnsan Sağlığı</h3><p>İnsan vücudu, sağlık ve fizyoloji hakkında yazılar.</p></div>
+    <div class="card"><h3>📚 Edebiyat & Kültür</h3><p>Bilimin dili, kültürle ve sanatla birleşiyor.</p></div>
+    <div class="card"><h3>🌿 Çevre Bilimi</h3><p>Gezegen sağlığı ve sürdürülebilirlik üzerine yazılar.</p></div>
+    <div class="card"><h3>⚛️ Fizik & Kimya</h3><p>Madde, enerji ve etkileşimlerin büyüsünü çöz.</p></div>
+  </div>
+</section>
+
+<footer>
+  © 2025 WONDERNEST • Elif Yıldız projesidir 🌙  
+</footer>
+
 </body>
 </html>
