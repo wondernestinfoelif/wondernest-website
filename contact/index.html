@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>İletişim — WONDERNEST</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg1:#0d1b2a; --bg2:#1b263b; --aur1:#5ef1c3; --aur2:#a9f8ff; --aur3:#f7a8b8;
+  --text:#f8f9fa; --muted:#cfd8dc; --accent:#f6a66a; --radius:18px; --stroke:rgba(255,255,255,.15);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Poppins',sans-serif;color:var(--text);
+  background:radial-gradient(ellipse at top,var(--bg1),var(--bg2));
+  min-height:100vh;overflow-x:hidden;padding:40px 20px;
+}
+.aurora{position:fixed;inset:0;z-index:-1;background:linear-gradient(120deg,var(--aur1),var(--aur2),var(--aur3));opacity:.25;filter:blur(120px);animation:flow 10s ease-in-out infinite alternate}
+@keyframes flow{0%{transform:translateY(0)}100%{transform:translateY(-10%) translateX(5%)}}
+.container{max-width:1000px;margin:0 auto}
+h1{font-size:34px;color:var(--aur2);margin-bottom:10px;text-shadow:0 0 12px rgba(255,255,255,.2)}
+p.sub{color:var(--muted);margin-bottom:24px}
+
+/* info cards */
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px}
+.card{
+  background:rgba(255,255,255,.08);border-radius:var(--radius);padding:18px;
+  border:1px solid var(--stroke);backdrop-filter:blur(10px);box-shadow:0 0 25px rgba(255,255,255,.05)
+}
+.card h2{font-size:18px;margin-bottom:6px;color:var(--aur3)}
+.card p{color:var(--muted);margin:6px 0}
+.card a{color:var(--accent);text-decoration:none;font-weight:700}
+
+/* form */
+.formwrap{
+  background:rgba(255,255,255,.08);border-radius:var(--radius);padding:22px;
+  border:1px solid var(--stroke);backdrop-filter:blur(10px);box-shadow:0 0 25px rgba(255,255,255,.05)
+}
+.formwrap h2{font-size:20px;margin-bottom:6px;color:var(--aur2)}
+form{margin-top:10px}
+label{display:block;margin:12px 0 6px;font-weight:600;color:var(--aur3)}
+input,textarea,select{
+  width:100%;padding:12px;border:none;border-radius:10px;background:rgba(255,255,255,.15);
+  color:var(--text);font-family:inherit;font-size:15px
+}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--accent)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+button{
+  margin-top:16px;background:var(--accent);color:#222;border:none;padding:12px 26px;border-radius:999px;
+  font-weight:700;cursor:pointer;transition:.3s
+}
+button:hover{transform:scale(1.05)}
+small.note{display:block;color:#b9c6cc;margin-top:10px}
+footer{margin-top:36px;color:var(--muted);font-size:14px;text-align:center;border-top:1px solid var(--stroke);padding-top:16px}
+@media(max-width:800px){.cards{grid-template-columns:1fr}.row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="aurora"></div>
+<div class="container">
+  <h1>İletişim</h1>
+  <p class="sub">Sorularınız ve önerileriniz için doğru yerdesiniz. Aşağıdan kurucuya veya resmî e-postaya ulaşabilir; belirli bir yazara mesaj bırakmak için formu doldurabilirsiniz.</p>
+
+  <div class="cards">
+    <div class="card">
+      <h2>Kurucu: Elif Yıldız</h2>
+      <p>WONDERNEST vizyonu, içerik stratejisi ve iş birliği konuları için.</p>
+      <p><strong>E-posta:</strong> <a href="mailto:eyildiz31108@gmail.com">elif@ornekmail.com</a></p>
+    </div>
+    <div class="card">
+      <h2>WONDERNEST Resmî Maili</h2>
+      <p>Genel sorular, geri bildirim, ekip ile iletişim.</p>
+      <p><strong>E-posta:</strong> <a href="wondernestinfo7@gmail.com">hello@wondernest.org</a></p>
+    </div>
+  </div>
+
+  <div class="formwrap">
+    <h2>Belirli bir yazarla özel olarak iletişime geç</h2>
+    <p class="sub" style="margin:0 0 10px">Yazar adını ve mesajınızı iletin; talebiniz <strong>WONDERNEST resmî mailine</strong> düşer. Yazarımız size, belirttiğiniz e-posta üzerinden dönüş yapar.</p>
+
+    <!-- Formspree: YOUR_ID'yi kendi form kimliğinle değiştir -->
+    <form action="https://formspree.io/f/xgvnnbab" method="POST">
+      <!-- konu satırını belirginleştirelim -->
+      <input type="hidden" name="_subject" value="WONDERNEST • Yazar Özel İletişim Talebi">
+      <!-- gönderimden sonra teşekkür sayfasına git -->
+      <input type="hidden" name="_next" value="https://<wondernestinfoelif>.github.io/contact/thanks.html">
+
+      <div class="row">
+        <div>
+          <label for="visitor_name">Adınız</label>
+          <input id="visitor_name" name="Ziyaretçi Adı" placeholder="Adınız">
+        </div>
+        <div>
+          <label for="visitor_email">E-posta adresiniz</label>
+          <input id="visitor_email" type="email" name="Ziyaretçi E-postası" placeholder="size dönüş yapılacak adres" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label for="author_name">Yazarın adı</label>
+          <input id="author_name" name="Hedef Yazar" placeholder="Örn: Ayşe Demir" required>
+        </div>
+        <div>
+          <label for="dept">Departman (isteğe bağlı)</label>
+          <select id="dept" name="Departman">
+            <option value="">Seçiniz (opsiyonel)</option>
+            <option>Mikrobiyoloji & Makrobiyoloji</option>
+            <option>Nöroloji & Psikoloji</option>
+            <option>Anatomi & İnsan Sağlığı</option>
+            <option>Edebiyat & Kültür</option>
+            <option>Çevre Bilimi</option>
+            <option>Fizik & Kimya</option>
+          </select>
+        </div>
+      </div>
+
+      <label for="message">Mesajınız</label>
+      <textarea id="message" name="Mesaj" rows="6" placeholder="Kısa bir selam ve konu..." required></textarea>
+
+      <!-- yanıt adresi (Formspree'de _replyto alanı bazı planlarda desteklenir) -->
+      <input type="hidden" name="_replyto" value="">
+
+      <button type="submit">Mesajı Gönder 💌</button>
+      <small class="note">Gönder butonuna basınca mesajınız WONDERNEST resmî e-postasına iletilir. Kişisel verileriniz yalnızca bu iletişimi sağlamak için kullanılır.</small>
+    </form>
+  </div>
+
+  <footer>© 2025 WONDERNEST • Birlikte öğren, birlikte üret 💫</footer>
+</div>
+</body>
+</html>
