@@ -1,221 +1,43 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>WONDERNEST — Learning for Every Age • Equality • 100% Up-to-Date</title>
-<meta name="description" content="WONDERNEST: An equality-driven learning space for all ages, with 100% up-to-date, sourced content.">
-<link rel="alternate" href="../index.html" hreflang="tr">
-<link rel="alternate" href="index.html" hreflang="en">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WONDERNEST — Learn Without Limits</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg1:#FAF5EF; --bg2:#F4EEE8;
-  --sage:#6E9E8B; --sage-deep:#3F6E5C;
-  --peach:#F6A66A; --peach-deep:#E9893D;
-  --ink:#2E3F3A; --muted:#66736E;
-  --white:#fff; --radius:16px;
-}
+:root{--bg1:#0d1b2a;--bg2:#1b263b;--aur1:#5ef1c3;--aur2:#a9f8ff;--aur3:#f7a8b8;--text:#f8f9fa;--muted:#cfd8dc;--accent:#f6a66a;--radius:20px}
 *{box-sizing:border-box;margin:0;padding:0}
-body{
-  font-family:'Poppins',system-ui,Segoe UI,Roboto,Arial,sans-serif;
-  color:var(--ink); line-height:1.6; min-height:100vh; padding:24px;
-  background:
-    radial-gradient(900px 600px at 85% 0%, rgba(246,166,106,0.12), transparent 60%),
-    radial-gradient(800px 500px at 10% 25%, rgba(110,158,139,0.12), transparent 60%),
-    linear-gradient(180deg,var(--bg1),var(--bg2));
-  overflow-x:hidden;
-}
-.container{max-width:1150px;margin:0 auto; position:relative}
-
-/* Header */
-header{
-  display:flex; align-items:center; justify-content:space-between; gap:16px;
-  background:rgba(255,255,255,0.82); backdrop-filter:blur(8px);
-  border:1px solid #00000010; border-radius:var(--radius);
-  padding:12px 16px; box-shadow:0 8px 24px rgba(0,0,0,.06);
-}
-.brand{display:flex; align-items:center; gap:12px}
-.logo img{height:54px; border-radius:12px; display:block}
-.name{font-weight:700; letter-spacing:.4px}
-nav a{
-  color:var(--ink); text-decoration:none; font-weight:600; margin-left:14px;
-  padding:6px 10px; border-radius:12px; border:1px solid transparent; transition:.25s;
-}
-nav a:hover{ border-color:#00000020; transform:translateY(-1px) }
-.cta{
-  background:linear-gradient(180deg,var(--peach),var(--peach-deep));
-  color:#2f2f2f; border-radius:999px; padding:9px 14px; text-decoration:none; font-weight:700;
-  box-shadow:0 8px 16px rgba(246,166,106,.25); transition:transform .2s;
-}
-.cta:hover{ transform:translateY(-2px) scale(1.02) }
-.lang{
-  margin-left:12px; padding:6px 10px; border-radius:999px;
-  background:rgba(110,158,139,.15); border:1px solid #00000012; text-decoration:none; color:var(--ink);
-}
-
-/* Hero */
-.hero{ margin-top:28px; display:grid; grid-template-columns:1.1fr .9fr; gap:24px; align-items:center }
-.hero-card{
-  background:var(--white); border:1px solid #00000010; border-radius:var(--radius);
-  padding:26px; box-shadow:0 12px 26px rgba(0,0,0,.08);
-}
-h1{font-size:32px; line-height:1.15; color:var(--sage-deep); margin-bottom:10px}
-.lede{font-weight:600}
-.muted{color:var(--muted)}
-.scene{
-  min-height:260px; border-radius:var(--radius);
-  background:
-    conic-gradient(from 140deg at 20% 30%, rgba(110,158,139,.15), transparent 30%),
-    conic-gradient(from -30deg at 80% 70%, rgba(246,166,106,.15), transparent 40%),
-    linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,.35));
-  border:1px dashed #00000012; position:relative; overflow:hidden;
-}
-.sparkle{ position:absolute; inset:0; pointer-events:none }
-.sparkle span{
-  position:absolute; width:6px; height:6px; border-radius:50%;
-  background:rgba(246,166,106,.45); animation:sp 4s ease-in-out infinite;
-}
-.sparkle span:nth-child(odd){ background:rgba(110,158,139,.45) }
-@keyframes sp{0%,100%{transform:translateY(0);opacity:.7}50%{transform:translateY(-4px);opacity:1}}
-.sparkle span:nth-child(1){top:18%;left:24%}
-.sparkle span:nth-child(2){top:42%;left:60%}
-.sparkle span:nth-child(3){top:72%;left:14%}
-sparkle span:nth-child(4){top:80%;left:86%}
-.sparkle span:nth-child(5){top:10%;left:74%}
-
-/* Sections */
-.section-title{margin-top:30px; font-size:22px; color:var(--sage-deep)}
-.grid{ margin-top:16px; display:grid; gap:18px; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)) }
-.card{
-  background:var(--white); border:1px solid #00000010; border-radius:var(--radius);
-  padding:18px; box-shadow:0 10px 22px rgba(0,0,0,.07); transition:.25s;
-  background-image:linear-gradient(150deg, rgba(246,166,106,.05), rgba(110,158,139,.05));
-}
-.card:hover{ transform:translateY(-4px); box-shadow:0 14px 28px rgba(0,0,0,.10) }
-.card h3{ color:var(--sage-deep); margin-bottom:6px }
-.tag{ display:inline-block; background:var(--bg2); color:#444; border-radius:999px; padding:4px 10px; font-size:12px; margin-top:6px; margin-right:6px }
-
-/* Team */
-.team{ margin-top:24px; display:grid; gap:18px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)) }
-.team .member{
-  background:var(--white); border:1px solid #00000010; border-radius:var(--radius);
-  padding:16px; box-shadow:0 8px 20px rgba(0,0,0,.06);
-}
-.member h4{ color:var(--sage-deep); margin-bottom:8px; font-size:18px }
-.member ul{ margin-left:18px; color:var(--muted) }
-.member li{ margin:4px 0 }
-
-/* Footer & mobile */
-footer{margin-top:34px; color:#6b756f; font-size:14px; text-align:center; border-top:1px solid #00000012; padding-top:16px}
-@media (max-width:900px){ .hero{grid-template-columns:1fr} nav{display:none} }
+body{font-family:'Poppins',sans-serif;color:var(--text);background:radial-gradient(ellipse at top,var(--bg1),var(--bg2));min-height:100vh;overflow-x:hidden;padding:40px 20px;text-align:center}
+.aurora{position:fixed;inset:0;z-index:-1;background:linear-gradient(120deg,var(--aur1),var(--aur2),var(--aur3));opacity:.25;filter:blur(120px);animation:flow 10s ease-in-out infinite alternate}
+@keyframes flow{0%{transform:translateY(0)}100%{transform:translateY(-10%) translateX(5%)}}
+h1{font-size:42px;margin-bottom:10px;color:var(--aur2)}
+p.lead{color:var(--muted);margin-bottom:30px;font-size:17px}
+nav{margin:30px auto;display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+a.btn{background:var(--accent);color:#222;text-decoration:none;padding:12px 26px;border-radius:999px;font-weight:700;transition:.3s;box-shadow:0 0 12px rgba(255,255,255,.1)}
+a.btn:hover{transform:scale(1.05)}
+footer{margin-top:50px;font-size:14px;color:var(--muted)}
+.lang{position:absolute;top:20px;right:20px}
+.lang a{color:var(--accent);text-decoration:none;font-weight:700}
 </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="brand">
-        <div class="logo"><img src="../assets/logo.png" alt="WONDERNEST" onerror="this.style.display='none'"></div>
-        <div class="name">WONDERNEST</div>
-      </div>
-      <nav>
-        <a href="#categories">Categories</a>
-        <a href="#about">About</a>
-        <a href="../hurafe/index.html">Myth Buster</a>
-        <a href="#team">Team</a>
-        <a class="cta" href="#join" onclick="alert('We will add the newsletter link tomorrow 💌');return false;">Join Newsletter</a>
-        <a class="lang" href="../index.html" aria-label="Türkçe'ye geç">TR</a>
-      </nav>
-    </header>
+<div class="aurora"></div>
 
-    <section class="hero">
-      <div class="hero-card">
-        <h1>Learning for every age — equal, warm, and 100% up to date.</h1>
-        <p class="lede">WONDERNEST is built on <strong>educational equality</strong>. Every piece is <strong>100% up to date</strong> and <strong>sourced</strong>, written in clear, welcoming language.</p>
-        <p class="muted">Kids, teens, adults — a gentle space for all curious minds with sound science and simple language.</p>
-      </div>
-      <div class="scene" aria-hidden="true">
-        <div class="sparkle"><span></span><span></span><span></span><span></span><span></span></div>
-      </div>
-    </section>
+<div class="lang"><a href="../index.html">🇹🇷 Türkçe</a></div>
 
-    <h2 id="categories" class="section-title">Categories</h2>
-    <section class="grid">
-      <article class="card"><h3>Microbiology & Macrobiology</h3><p>From cells to ecosystems: layers of life.</p><span class="tag">DNA</span><span class="tag">Ecosystems</span></article>
-      <article class="card"><h3>Neurology & Psychology</h3><p>Foundations of brain, memory, emotion and behavior.</p><span class="tag">Memory</span><span class="tag">Emotion</span></article>
-      <article class="card"><h3>Anatomy & Human Health</h3><p>Body systems, preventive health and wellbeing.</p><span class="tag">Physiology</span><span class="tag">Health</span></article>
-      <article class="card"><h3>Literature & Culture</h3><p>Scientific language, narrative, culture and critical thinking.</p><span class="tag">Narrative</span><span class="tag">Culture</span></article>
-      <article class="card"><h3>Environmental Science</h3><p>Planetary health, sustainability and climate literacy.</p><span class="tag">Climate</span><span class="tag">Nature</span></article>
-      <article class="card"><h3>Physics & Chemistry</h3><p>Fundamental laws of nature and the story of matter.</p><span class="tag">Energy</span><span class="tag">Matter</span></article>
-      <article class="card"><h3>Myth Buster</h3><p>Gently debunking common misconceptions with science.</p><span class="tag">Debunking</span><span class="tag">Up-to-date</span></article>
-    </section>
+<h1>WONDERNEST</h1>
+<p class="lead">A global learning nest built on equality, curiosity, and science.  
+Accessible knowledge for everyone — everywhere.</p>
 
-    <section id="about" class="hero-card" style="margin-top:28px">
-      <h2 style="color:var(--sage-deep); margin-bottom:8px;">About</h2>
-      <p class="muted">WONDERNEST is an accessible learning nest for everyone. Equal access, clear language, sourced explanations and fresh science — under one gentle roof.</p>
-    </section>
+<nav>
+  <a href="departments/index.html" class="btn">Departments</a>
+  <a href="hurafe/index.html" class="btn">Myth Busters</a>
+  <a href="team/index.html" class="btn">Meet Our Team</a>
+  <a href="newsletter/index.html" class="btn">Newsletter</a>
+  <a href="ideas/index.html" class="btn">Share an Idea</a>
+  <a href="contact/index.html" class="btn">Contact</a>
+</nav>
 
-    <!-- TEAM -->
-    <h2 id="team" class="section-title">Meet the Team — 2025–2026 Department Team</h2>
-    <section class="team">
-      <div class="member">
-        <h4>Microbiology & Macrobiology</h4>
-        <ul>
-          <li>Hayrunnisa Kobak</li>
-          <li>İlker Yasin</li>
-          <li>Elif Yıldız</li>
-          <li>Kaan Efe Akgül</li>
-        </ul>
-      </div>
-      <div class="member">
-        <h4>Neurology & Psychology</h4>
-        <ul>
-          <li>Hasibe Daşman</li>
-          <li>Elif Yıldız</li>
-          <li>Hayrunnisa Kobak</li>
-          <li>Nehir Ela Güngör</li>
-          <li>Mehveş Naz Günoğlu</li>
-        </ul>
-      </div>
-      <div class="member">
-        <h4>Anatomy & Human Health</h4>
-        <ul>
-          <li>Elif Yıldız</li>
-          <li>Hasan Tarık Doğan</li>
-          <li>İlker Yasin</li>
-        </ul>
-      </div>
-      <div class="member">
-        <h4>Literature & Culture</h4>
-        <ul>
-          <li>Doruk Has</li>
-          <li>Zeynep Nehir Biçer</li>
-          <li>Yağız Söylemez</li>
-        </ul>
-      </div>
-      <div class="member">
-        <h4>Environmental Science</h4>
-        <ul>
-          <li>Zeynep Nehir Biçer</li>
-          <li>Duru Umdu</li>
-          <li>Hayrunnisa Atçı</li>
-        </ul>
-      </div>
-      <div class="member">
-        <h4>Physics & Chemistry</h4>
-        <ul>
-          <li>Hasan Tarık Doğan</li>
-          <li>Doruk Has</li>
-          <li>Hasibe Daşman</li>
-          <li>Duru Umdu</li>
-          <li>Nur Sima Karhan</li>
-        </ul>
-      </div>
-    </section>
-
-    <footer>© <span id="year"></span> WONDERNEST — Equality, curiosity & trustworthy knowledge. 🌙</footer>
-  </div>
-
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<footer>© 2025 WONDERNEST • Learn, Grow, Inspire 💫</footer>
 </body>
 </html>
