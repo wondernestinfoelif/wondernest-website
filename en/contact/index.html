@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — WONDERNEST</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#0d1b2a;--bg2:#1b263b;--aur1:#5ef1c3;--aur2:#a9f8ff;--aur3:#f7a8b8;--text:#f8f9fa;--muted:#cfd8dc;--accent:#f6a66a;--radius:18px;--stroke:rgba(255,255,255,.15)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Poppins',sans-serif;color:var(--text);background:radial-gradient(ellipse at top,var(--bg1),var(--bg2));min-height:100vh;overflow-x:hidden;padding:40px 20px}
+.aurora{position:fixed;inset:0;z-index:-1;background:linear-gradient(120deg,var(--aur1),var(--aur2),var(--aur3));opacity:.25;filter:blur(120px);animation:flow 10s ease-in-out infinite alternate}
+@keyframes flow{0%{transform:translateY(0)}100%{transform:translateY(-10%) translateX(5%)}}
+.container{max-width:1000px;margin:0 auto}
+h1{font-size:34px;color:var(--aur2);margin-bottom:10px;text-shadow:0 0 12px rgba(255,255,255,.2)}
+p.sub{color:var(--muted);margin-bottom:24px}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px}
+.card{background:rgba(255,255,255,.08);border-radius:var(--radius);padding:18px;border:1px solid var(--stroke);backdrop-filter:blur(10px);box-shadow:0 0 25px rgba(255,255,255,.05)}
+.card h2{font-size:18px;margin-bottom:6px;color:var(--aur3)}
+.card p{color:var(--muted);margin:6px 0}
+.card a{color:var(--accent);text-decoration:none;font-weight:700}
+.formwrap{background:rgba(255,255,255,.08);border-radius:var(--radius);padding:22px;border:1px solid var(--stroke);backdrop-filter:blur(10px);box-shadow:0 0 25px rgba(255,255,255,.05)}
+.formwrap h2{font-size:20px;margin-bottom:6px;color:var(--aur2)}
+form{margin-top:10px}
+label{display:block;margin:12px 0 6px;font-weight:600;color:var(--aur3)}
+input,textarea,select{width:100%;padding:12px;border:none;border-radius:10px;background:rgba(255,255,255,.15);color:var(--text);font-family:inherit;font-size:15px}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--accent)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+button{margin-top:16px;background:var(--accent);color:#222;border:none;padding:12px 26px;border-radius:999px;font-weight:700;cursor:pointer;transition:.3s}
+button:hover{transform:scale(1.05)}
+small.note{display:block;color:#b9c6cc;margin-top:10px}
+footer{margin-top:36px;color:var(--muted);font-size:14px;text-align:center;border-top:1px solid var(--stroke);padding-top:16px}
+@media(max-width:800px){.cards{grid-template-columns:1fr}.row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="aurora"></div>
+<div class="container">
+  <h1>Contact</h1>
+  <p class="sub">Reach the founder or our official inbox. You can also write to a specific author below.</p>
+
+  <div class="cards">
+    <div class="card">
+      <h2>Founder: Elif Yıldız</h2>
+      <p>Vision, content strategy, partnerships.</p>
+      <p><strong>Email:</strong> <a href="mailto:eyildiz31108@gmail.com">eyildiz31108@gmail.com</a></p>
+    </div>
+    <div class="card">
+      <h2>WONDERNEST Official</h2>
+      <p>General questions, feedback, team contact.</p>
+      <p><strong>Email:</strong> <a href="mailto:wondernestinfo7@gmail.com">wondernestinfo7@gmail.com</a></p>
+    </div>
+  </div>
+
+  <div class="formwrap">
+    <h2>Contact a Specific Author</h2>
+    <p class="sub" style="margin:0 0 10px">Tell us the author’s name and your message. Your request goes to the <b>official WONDERNEST inbox</b>; the author will reply to your email.</p>
+
+    <form action="https://formspree.io/f/xgvnnbab" method="POST">
+      <input type="hidden" name="_subject" value="WONDERNEST • Author Contact Request (EN)">
+      <input type="hidden" name="_next" value="https://YOUR_GITHUB_USERNAME.github.io/en/contact/thanks.html">
+
+      <div class="row">
+        <div>
+          <label for="visitor_name">Your name</label>
+          <input id="visitor_name" name="Visitor Name" placeholder="Your name">
+        </div>
+        <div>
+          <label for="visitor_email">Your email</label>
+          <input id="visitor_email" type="email" name="Visitor Email" placeholder="we'll reply here" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label for="author_name">Author’s name</label>
+          <input id="author_name" name="Target Author" placeholder="e.g., Ayşe Demir" required>
+        </div>
+        <div>
+          <label for="dept">Department (optional)</label>
+          <select id="dept" name="Department">
+            <option value="">Select (optional)</option>
+            <option>Microbiology & Macrobiology</option>
+            <option>Neurology & Psychology</option>
+            <option>Anatomy & Human Health</option>
+            <option>Literature & Culture</option>
+            <option>Environmental Science</option>
+            <option>Physics & Chemistry</option>
+          </select>
+        </div>
+      </div>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="Message" rows="6" placeholder="Say hello and tell us your topic..." required></textarea>
+
+      <button type="submit">Send Message 💌</button>
+      <small class="note">Your message is sent to WONDERNEST’s official email. We only use your data to handle this request.</small>
+    </form>
+  </div>
+
+  <footer>© 2025 WONDERNEST • Equality • Curiosity • Trust</footer>
+</div>
+</body>
+</html>
