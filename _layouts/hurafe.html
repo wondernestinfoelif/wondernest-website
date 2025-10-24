@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ page.title }} — WONDERNEST</title>
+  <link href="/assets/css/site.css" rel="stylesheet">
+</head>
+<body class="wn-bg">
+  <div class="aurora" aria-hidden="true"></div>
+  <main class="container">
+    <header class="header">
+      <a class="link" href="/hurafe/">← Hurafe Avcısı</a>
+      <div class="title">{{ page.title }}</div>
+      <div></div>
+    </header>
+
+    <section class="lede-block">
+      <span class="badge {{ page.badge }}">{{ page.verdict }}</span>
+      {% if page.lede %}<p class="lede">{{ page.lede }}</p>{% endif %}
+      {% if page.updated %}<p class="meta">Güncellendi: {{ page.updated }}</p>{% endif %}
+    </section>
+
+    <article class="content">
+      {{ content }}
+    </article>
+
+    {% if page.sources %}
+      <h3>Kaynaklar</h3>
+      <ul>
+        {% for s in page.sources %}<li>{{ s }}</li>{% endfor %}
+      </ul>
+    {% endif %}
+  </main>
+</body>
+</html>
