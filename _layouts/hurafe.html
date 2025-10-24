@@ -1,36 +1,56 @@
 <!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>{{ page.title }} — WONDERNEST</title>
-  <link href="/assets/css/site.css" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.title }} — WONDERNEST</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{ --bg1:#0d1b2a; --bg2:#1b263b; --aur1:#5ef1c3; --aur2:#a9f8ff; --aur3:#f7a8b8; --ink:#eaf2f4; --muted:#cbd5d1; --card:#ffffffcc; --stroke:#00000020; --r:16px; --accent:#f6a66a; }
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:radial-gradient(ellipse at top,var(--bg1),var(--bg2));min-height:100vh;padding:24px;overflow-x:hidden}
+.aurora{position:fixed;inset:0;z-index:-1;filter:blur(110px);opacity:.28;background:linear-gradient(120deg,var(--aur1),var(--aur2),var(--aur3));animation:flow 12s ease-in-out infinite alternate}
+@keyframes flow{0%{transform:translateY(0)}100%{transform:translateY(-8%) translateX(4%)}}
+.container{max-width:900px;margin:0 auto}
+.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.header a{color:#dff3ff;text-decoration:none;font-weight:600}
+.title{font-weight:800;font-size:26px;color:var(--aur2);text-shadow:0 0 10px #ffffff30}
+.block{background:rgba(255,255,255,.08);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:14px 16px;margin-bottom:16px;color:var(--muted)}
+.badge{display:inline-block;padding:6px 10px;border-radius:999px;font-weight:800;font-size:12px;margin-right:8px}
+.ok{background:#d9f5e7;color:#135a3a;border:1px solid #a9e7c9}
+.no{background:#ffe6e6;color:#7b1b1b;border:1px solid #ffc4c4}
+.mid{background:#fff4d6;color:#7a5a07;border:1px solid #ffe29a}
+.content{background:#fff;border:1px solid #eee;border-radius:12px;color:#111;padding:18px;line-height:1.6}
+.meta{font-size:12px;color:#5a6864;margin-top:8px}
+</style>
 </head>
-<body class="wn-bg">
-  <div class="aurora" aria-hidden="true"></div>
-  <main class="container">
-    <header class="header">
-      <a class="link" href="/hurafe/">← Hurafe Avcısı</a>
-      <div class="title">{{ page.title }}</div>
-      <div></div>
-    </header>
+<body>
+<div class="aurora" aria-hidden="true"></div>
+<div class="container">
+  <div class="header">
+    <a href="/hurafe/">← Hurafe Avcısı</a>
+    <div class="title">{{ page.title }}</div>
+    <div></div>
+  </div>
 
-    <section class="lede-block">
-      <span class="badge {{ page.badge }}">{{ page.verdict }}</span>
-      {% if page.lede %}<p class="lede">{{ page.lede }}</p>{% endif %}
-      {% if page.updated %}<p class="meta">Güncellendi: {{ page.updated }}</p>{% endif %}
-    </section>
+  <div class="block">
+    <span class="badge {{ page.badge }}">{{ page.verdict }}</span>
+    {% if page.lede %}<span>{{ page.lede }}</span>{% endif %}
+    {% if page.updated %}<div class="meta">Güncellendi: {{ page.updated }}</div>{% endif %}
+  </div>
 
-    <article class="content">
-      {{ content }}
-    </article>
+  <article class="content">
+    {{ content }}
+  </article>
 
-    {% if page.sources %}
-      <h3>Kaynaklar</h3>
-      <ul>
-        {% for s in page.sources %}<li>{{ s }}</li>{% endfor %}
-      </ul>
-    {% endif %}
-  </main>
+  {% if page.sources %}
+  <div class="block" style="margin-top:16px">
+    <strong>Kaynaklar</strong>
+    <ul>
+      {% for s in page.sources %}<li>{{ s }}</li>{% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+</div>
 </body>
 </html>
